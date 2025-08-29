@@ -74,6 +74,11 @@
 			<artifactId>webdrivermanager</artifactId>
 			<version>6.2.0</version>
 		</dependency>
+		<dependency>
+			<groupId>AmazonAutomationTest</groupId>
+			<artifactId>AmazonAutomationTest</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
