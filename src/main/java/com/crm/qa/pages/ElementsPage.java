@@ -160,28 +160,25 @@ public class ElementsPage extends TestBase{
 	WebElement toolsQAImage;
 	@FindBy(xpath = "//a[text()='Click Here for Valid Link']")
 	WebElement validLink;
-
 	@FindBy(xpath = "//a[text()='Click Here for Broken Link']")
 	WebElement brokenLink;
 	@FindBy(xpath="//h3[text()='Status Codes']")
 	WebElement statusCode;
 
-
+	@FindBy(xpath = "//div[text()='Forms']")
+	WebElement Forms;
 
 
 
 	//Constructor
 	//Initializing the page objects
-
-
-
 	public ElementsPage() {
 		PageFactory.initElements(driver, this);
 		tstU = new TestUtil();		
 		act = new Actions(driver);
-
-
 	}
+	
+	
 	public String elementsText() {
 		return elementText.getText();
 	}
@@ -575,7 +572,7 @@ public class ElementsPage extends TestBase{
 		return responseOfEveryLink.getText();
 	}
 
-	
+
 	//Broken Links
 
 	public String verifyBrokenLinkOnMenuText() {
@@ -601,8 +598,20 @@ public class ElementsPage extends TestBase{
 	}
 
 	public String getStatusCode() {
-		return statusCode.getText();
+		String getStusCode = statusCode.getText();
+		driver.navigate().back();
+		return getStusCode;
 	}
+
+
+	//Forms
+	public FormsPage clickOnFormsBtn() {
+		Forms.sendKeys(Keys.PAGE_DOWN);
+		Forms.click();
+		return new FormsPage();
+	}
+
+
 }
 
 

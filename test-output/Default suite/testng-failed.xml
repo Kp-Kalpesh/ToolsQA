@@ -7,7 +7,7 @@
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="verifiedWindowAndAllLinks"/>
+          <include name="verifyBrokenLinks"/>
         </methods>
       </class> <!-- com.crm.qa.testCases.ElementPageTest -->
     </classes>

@@ -1,105 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
+<testng-results ignored="7" total="8" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-01T13:14:14 IST" name="Default suite" finished-at="2025-09-01T13:16:04 IST" duration-ms="110617">
+  <suite started-at="2025-09-01T14:33:59 IST" name="Default suite" finished-at="2025-09-01T14:34:17 IST" duration-ms="17960">
     <groups>
     </groups>
-    <test started-at="2025-09-01T13:14:14 IST" name="Default test" finished-at="2025-09-01T13:16:04 IST" duration-ms="110617">
+    <test started-at="2025-09-01T14:33:59 IST" name="Default test" finished-at="2025-09-01T14:34:17 IST" duration-ms="17960">
       <class name="com.crm.qa.testCases.ElementPageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.crm.qa.testCases.ElementPageTest@793f29ff]" started-at="2025-09-01T13:14:14 IST" name="setUp" finished-at="2025-09-01T13:14:23 IST" duration-ms="9003" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.crm.qa.testCases.ElementPageTest@117159c0]" started-at="2025-09-01T14:33:59 IST" name="setUp" finished-at="2025-09-01T14:34:12 IST" duration-ms="12886" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyElementsTextTest()[pri:1, instance:com.crm.qa.testCases.ElementPageTest@793f29ff]" started-at="2025-09-01T13:14:23 IST" name="verifyElementsTextTest" finished-at="2025-09-01T13:14:23 IST" duration-ms="21" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyElementsTextTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.qa.testCases.ElementPageTest@793f29ff]" started-at="2025-09-01T13:14:23 IST" name="tearDown" finished-at="2025-09-01T13:14:23 IST" duration-ms="104" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.crm.qa.testCases.ElementPageTest@793f29ff]" started-at="2025-09-01T13:14:23 IST" name="setUp" finished-at="2025-09-01T13:14:31 IST" duration-ms="8611" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="verifyClickOnTextBox()[pri:2, instance:com.crm.qa.testCases.ElementPageTest@793f29ff]" started-at="2025-09-01T13:14:31 IST" name="verifyClickOnTextBox" finished-at="2025-09-01T13:14:32 IST" duration-ms="435" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyClickOnTextBox -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.qa.testCases.ElementPageTest@793f29ff]" started-at="2025-09-01T13:14:32 IST" name="tearDown" finished-at="2025-09-01T13:14:32 IST" duration-ms="99" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.crm.qa.testCases.ElementPageTest@793f29ff]" started-at="2025-09-01T13:14:32 IST" name="setUp" finished-at="2025-09-01T13:14:41 IST" duration-ms="8787" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="verifyClickOnCheckBox()[pri:3, instance:com.crm.qa.testCases.ElementPageTest@793f29ff]" started-at="2025-09-01T13:14:41 IST" name="verifyClickOnCheckBox" finished-at="2025-09-01T13:14:41 IST" duration-ms="121" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyClickOnCheckBox -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.qa.testCases.ElementPageTest@793f29ff]" started-at="2025-09-01T13:14:41 IST" name="tearDown" finished-at="2025-09-01T13:14:41 IST" duration-ms="105" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.crm.qa.testCases.ElementPageTest@793f29ff]" started-at="2025-09-01T13:14:41 IST" name="setUp" finished-at="2025-09-01T13:14:50 IST" duration-ms="8653" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="chekRadioButtons()[pri:4, instance:com.crm.qa.testCases.ElementPageTest@793f29ff]" started-at="2025-09-01T13:14:50 IST" name="chekRadioButtons" finished-at="2025-09-01T13:14:50 IST" duration-ms="178" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- chekRadioButtons -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.qa.testCases.ElementPageTest@793f29ff]" started-at="2025-09-01T13:14:50 IST" name="tearDown" finished-at="2025-09-01T13:14:50 IST" duration-ms="101" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.crm.qa.testCases.ElementPageTest@793f29ff]" started-at="2025-09-01T13:14:50 IST" name="setUp" finished-at="2025-09-01T13:14:58 IST" duration-ms="8242" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="webTablesFlow()[pri:5, instance:com.crm.qa.testCases.ElementPageTest@793f29ff]" started-at="2025-09-01T13:14:58 IST" name="webTablesFlow" finished-at="2025-09-01T13:15:00 IST" duration-ms="1712" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- webTablesFlow -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.qa.testCases.ElementPageTest@793f29ff]" started-at="2025-09-01T13:15:00 IST" name="tearDown" finished-at="2025-09-01T13:15:00 IST" duration-ms="131" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.crm.qa.testCases.ElementPageTest@793f29ff]" started-at="2025-09-01T13:15:00 IST" name="setUp" finished-at="2025-09-01T13:15:09 IST" duration-ms="8647" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="validateButtonTextOnMenu()[pri:6, instance:com.crm.qa.testCases.ElementPageTest@793f29ff]" started-at="2025-09-01T13:15:09 IST" name="validateButtonTextOnMenu" finished-at="2025-09-01T13:15:13 IST" duration-ms="4423" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validateButtonTextOnMenu -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.qa.testCases.ElementPageTest@793f29ff]" started-at="2025-09-01T13:15:13 IST" name="tearDown" finished-at="2025-09-01T13:15:13 IST" duration-ms="118" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.crm.qa.testCases.ElementPageTest@793f29ff]" started-at="2025-09-01T13:15:13 IST" name="setUp" finished-at="2025-09-01T13:15:22 IST" duration-ms="8394" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="verifiedWindowAndAllLinks()[pri:7, instance:com.crm.qa.testCases.ElementPageTest@793f29ff]" started-at="2025-09-01T13:15:22 IST" name="verifiedWindowAndAllLinks" finished-at="2025-09-01T13:15:35 IST" duration-ms="13287" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifiedWindowAndAllLinks -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.qa.testCases.ElementPageTest@793f29ff]" started-at="2025-09-01T13:15:35 IST" name="tearDown" finished-at="2025-09-01T13:15:35 IST" duration-ms="96" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.crm.qa.testCases.ElementPageTest@793f29ff]" started-at="2025-09-01T13:15:35 IST" name="setUp" finished-at="2025-09-01T13:15:43 IST" duration-ms="8539" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="verifyBrokenLinks()[pri:8, instance:com.crm.qa.testCases.ElementPageTest@793f29ff]" started-at="2025-09-01T13:15:43 IST" name="verifyBrokenLinks" finished-at="2025-09-01T13:16:04 IST" duration-ms="20664" status="PASS">
+        <test-method signature="verifyBrokenLinks()[pri:8, instance:com.crm.qa.testCases.ElementPageTest@117159c0]" started-at="2025-09-01T14:34:12 IST" name="verifyBrokenLinks" finished-at="2025-09-01T14:34:17 IST" duration-ms="4929" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyBrokenLinks -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.qa.testCases.ElementPageTest@793f29ff]" started-at="2025-09-01T13:16:04 IST" name="tearDown" finished-at="2025-09-01T13:16:04 IST" duration-ms="107" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.qa.testCases.ElementPageTest@117159c0]" started-at="2025-09-01T14:34:17 IST" name="tearDown" finished-at="2025-09-01T14:34:17 IST" duration-ms="109" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
