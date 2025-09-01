@@ -207,11 +207,11 @@ public class ElementPageTest extends TestBase{
 		try {
 			String actLinkText = elepg.verifyLinksTextInMenu();
 			Assert.assertEquals(actLinkText, "Links");
-			
+
 			elepg.clickOnLinks();
 			String actHomeText = elepg.verifyHomeText();
 			Assert.assertEquals(actHomeText, "Home");
-			
+
 			elepg.clickOnHomeLink();
 			elepg.clickOnCreatedLink();
 			Assert.assertEquals(elepg.verifyCreatedLinkResonse(), "Link has responded with staus 201 and status text Created");
@@ -227,9 +227,26 @@ public class ElementPageTest extends TestBase{
 			Assert.assertEquals(elepg.verifyForbiddenLinkResonse(), "Link has responded with staus 403 and status text Forbidden");
 			elepg.clickOnNotFoundLink();
 			Assert.assertEquals(elepg.verifyNotFoundLinkResonse(), "Link has responded with staus 404 and status text Not Found");
-			
+
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
+		}
+	}
+
+	@Test(priority = 8)
+	public void verifyBrokenLinks() {
+		try {
+			Assert.assertEquals(elepg.verifyBrokenLinkOnMenuText(), "Broken Links - Images");
+			elepg.verifyClickOnBrokenLinks();
+			boolean flag = elepg.displayedToolsQALogo();
+			Assert.assertTrue(flag);
+			elepg.clickOnValidLinkText();
+			elepg.clickBrokenLinkText();
+			Assert.assertEquals(elepg.getStatusCode(), "Status Codes");
+
+		}catch (Exception e) {
+			System.out.println("Element not found within timeout: " + e.getMessage());
+
 		}
 	}
 
@@ -237,7 +254,6 @@ public class ElementPageTest extends TestBase{
 	@AfterMethod
 
 	public void tearDown() {
-
-//		driver.quit();
+		driver.quit();
 	}
 }

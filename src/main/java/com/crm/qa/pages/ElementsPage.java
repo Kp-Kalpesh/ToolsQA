@@ -153,9 +153,28 @@ public class ElementsPage extends TestBase{
 	@FindBy(xpath="(//div//p)[10]")
 	WebElement responseOfEveryLink;
 
+	//	Broken Links - Images
+	@FindBy(xpath = "(//li[contains(@id,'item-6')])[1]")
+	WebElement clickOnBrokenLinks;
+	@FindBy(xpath = "(//img[@src='/images/Toolsqa.jpg'])[2]")
+	WebElement toolsQAImage;
+	@FindBy(xpath = "//a[text()='Click Here for Valid Link']")
+	WebElement validLink;
+
+	@FindBy(xpath = "//a[text()='Click Here for Broken Link']")
+	WebElement brokenLink;
+	@FindBy(xpath="//h3[text()='Status Codes']")
+	WebElement statusCode;
+
+
+
+
 
 	//Constructor
 	//Initializing the page objects
+
+
+
 	public ElementsPage() {
 		PageFactory.initElements(driver, this);
 		tstU = new TestUtil();		
@@ -502,7 +521,6 @@ public class ElementsPage extends TestBase{
 		return responseOfEveryLink.getText();
 	}
 
-
 	public void clickOnNoContentLink() {
 		noContentLink.click();
 	}
@@ -511,7 +529,6 @@ public class ElementsPage extends TestBase{
 		Thread.sleep(2000);
 		return responseOfEveryLink.getText();
 	}
-
 
 	public void clickOnMovedLink() {
 		movedLink.click();
@@ -522,7 +539,6 @@ public class ElementsPage extends TestBase{
 		return responseOfEveryLink.getText();
 	}
 
-
 	public void clickOnBadRequestLink() throws InterruptedException {
 		badRequestLink.click();
 	}
@@ -531,7 +547,6 @@ public class ElementsPage extends TestBase{
 		Thread.sleep(2000);
 		return responseOfEveryLink.getText();
 	}
-
 
 	public void clickOnUnAuthorizedLink() {
 		unAuthorizedLink.click();
@@ -542,7 +557,6 @@ public class ElementsPage extends TestBase{
 		return responseOfEveryLink.getText();
 	}
 
-
 	public void clickOnForbiddenLink() {
 		forbiddenLink.click();
 	}
@@ -551,7 +565,6 @@ public class ElementsPage extends TestBase{
 		Thread.sleep(2000);
 		return responseOfEveryLink.getText();
 	}
-
 
 	public void clickOnNotFoundLink() {
 		notFoundLink.click();
@@ -562,6 +575,34 @@ public class ElementsPage extends TestBase{
 		return responseOfEveryLink.getText();
 	}
 
+	
+	//Broken Links
+
+	public String verifyBrokenLinkOnMenuText() {
+		return clickOnBrokenLinks.getText();
+	}
+
+	public void verifyClickOnBrokenLinks() {
+		clickOnBrokenLinks.click();
+	}
+
+	public boolean displayedToolsQALogo() {
+		return toolsQAImage.isDisplayed();
+	}
+
+	public void clickOnValidLinkText() {
+		validLink.click();
+		driver.navigate().back();
+	}
+
+	public void clickBrokenLinkText() {
+		brokenLink.sendKeys(Keys.PAGE_DOWN);
+		brokenLink.click();
+	}
+
+	public String getStatusCode() {
+		return statusCode.getText();
+	}
 }
 
 
