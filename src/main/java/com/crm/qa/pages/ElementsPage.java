@@ -2,6 +2,7 @@ package com.crm.qa.pages;
 
 import java.util.Set;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -606,7 +607,10 @@ public class ElementsPage extends TestBase{
 
 	//Forms
 	public FormsPage clickOnFormsBtn() {
-		Forms.sendKeys(Keys.PAGE_DOWN);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,500)");
+		
+//		Forms.sendKeys(Keys.PAGE_DOWN);
 		Forms.click();
 		return new FormsPage();
 	}

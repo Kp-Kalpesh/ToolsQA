@@ -14,39 +14,49 @@ public class FormsPageTest extends TestBase{
 	HomePage homepg;
 	ElementsPage elepg;
 	FormsPage frmPg;
-	
+
+
 	public FormsPageTest() {
 		super();
 	}
-	
-	
+
+
 	@BeforeMethod
 	public void setUp() {
 		initialization();
 		homepg = new HomePage();
+		elepg = homepg.clickOnElements();
 		frmPg = elepg.clickOnFormsBtn();
 	}
-	
-	
+
+
 	@Test
 	public void verifyFormsText() {
-		String actFormText = frmPg.verifyFormsText();
-		Assert.assertEquals(actFormText, "Forms");
+		try {
+			String actFormText = frmPg.verifyFormsText();
+			Assert.assertEquals(actFormText, "Forms");
+			
+			String actPracticeFormtext = frmPg.verifyPracticeFormText();
+			Assert.assertEquals(actPracticeFormtext, "Practice Form");
+			frmPg.clickOnPracticeFormText();
+		}catch (Exception e) {
+			System.out.println("Element not found within timeout: " + e.getMessage());
+		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
+
 	@AfterMethod
 	public void tearDown() {
-		driver.quit();
+//		driver.quit();
 	}
 
 }

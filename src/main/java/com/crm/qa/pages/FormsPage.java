@@ -15,7 +15,7 @@ public class FormsPage extends TestBase{
 	@FindBy(xpath = "//div[text()='Forms']")
 	WebElement Forms;
 
-	@FindBy(xpath = "(//li[@class='btn btn-light '])[10]")
+	@FindBy(xpath = "//span[text()='Practice Form']")
 	WebElement practiceForm;
 
 
@@ -33,15 +33,13 @@ public class FormsPage extends TestBase{
 	}
 
 	public String verifyFormsText() {
-		Forms.sendKeys(Keys.PAGE_DOWN);
+//		Forms.sendKeys(Keys.PAGE_DOWN);
 		return Forms.getText();
 	}
 
-	public void clickOnFormsText() {
-		Forms.click();
-	}
 
-	public String verifyPracticeFormText() {
+	public String verifyPracticeFormText() throws InterruptedException {
+		Thread.sleep(2000);
 		return practiceForm.getText();		
 	}
 
