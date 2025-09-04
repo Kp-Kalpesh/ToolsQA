@@ -30,7 +30,7 @@ public class FormsPageTest extends TestBase{
 	}
 
 
-	@Test
+	@Test(priority = 1)
 	public void verifyFormsText() {
 		try {
 			String actFormText = frmPg.verifyFormsText();
@@ -39,14 +39,41 @@ public class FormsPageTest extends TestBase{
 			String actPracticeFormtext = frmPg.verifyPracticeFormText();
 			Assert.assertEquals(actPracticeFormtext, "Practice Form");
 			frmPg.clickOnPracticeFormText();
+
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}
 	}
 
-	@AfterMethod
-	public void tearDown() {
-		//		driver.quit();
+
+	@Test(priority = 2)
+	public void verifySubmitForm() {
+		try {
+			frmPg.clickOnPracticeFormText();
+			frmPg.enterFName(prop.getProperty("formFname"));
+			frmPg.enterLName(prop.getProperty("formLname"));
+			frmPg.enterEmail(prop.getProperty("formEmail"));
+			frmPg.selectGenderRadioBtn();
+			frmPg.enterMobileNumber(prop.getProperty("formMobNumber"));
+			//			frmPg.selectDOB();
+			frmPg.enterSubject(prop.getProperty("forSubject"));
+			frmPg.selectHobbiesChkBx();
+			frmPg.enterCurrentAddress(prop.getProperty("formCurrentAddress"));
+			frmPg.selectState(prop.getProperty("userState"));
+			frmPg.selectCity(prop.getProperty("userCity"));
+			frmPg.submitFormBtn();
+			Assert.assertEquals(frmPg.verifySubmittedForm(), prop.getProperty("actSubmittedForm"));
+			Assert.assertEquals(frmPg.verifyUserName(), prop.getProperty("actUserName"));
+			frmPg.clickOnClose();
+
+		}catch (Exception e) {
+			System.out.println("Element not found within timeout: " + e.getMessage());
+		}
 	}
 
+
+	@AfterMethod
+	public void tearDown() {
+		driver.quit();
+	}
 }
