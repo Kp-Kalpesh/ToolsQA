@@ -3,12 +3,18 @@ package com.crm.qa.base;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.crm.qa.util.TestUtil;
 
@@ -42,7 +48,7 @@ public class TestBase {
 
 		if(browserName.equals("Chrome")){
 			System.setProperty("webdriver.chrome.driver", "C:/Users/wcg112/eclipse-workspace/ToolsQA/Drivers/chromedriver (2).exe");
-			
+
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 
@@ -59,7 +65,17 @@ public class TestBase {
 
 		driver.get(prop.getProperty("Url"));
 
-
+//		WebDriverWait wait = new WebDriverWait(driver, (10));
+//
+//		try {
+//			WebElement element = wait.until(
+//					ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class ='avatar mx-auto white'])[1]"))
+//					);
+//			element.click();
+//		} catch (TimeoutException e) {
+//			System.out.println("Element was not found within the timeout period.");
+//			// Optional: Take screenshot or log error
+//		}
 
 	}
 

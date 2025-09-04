@@ -5,12 +5,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 import com.crm.qa.base.TestBase;
 
 public class FormsPage extends TestBase{
 	//	private TestUtil tstU;
 	private Actions act;
+	private Select se;
 
 
 	//use Pagefactory
@@ -32,6 +34,21 @@ public class FormsPage extends TestBase{
 	WebElement mobNumber;
 	@FindBy(xpath = "//input[contains(@id,'dateOfBirthInput')]")
 	WebElement dob;
+	
+	@FindBy(xpath = "//select//option[text()='August']")
+	WebElement selectMonth;
+
+	@FindBy(xpath = "//option[text()='1998']")
+	WebElement selectYr;
+
+	@FindBy(xpath = "(//div[text()='3'])[1]")
+	WebElement selectDate;
+	
+	
+	
+	
+	
+	
 	@FindBy(xpath = "//input[@id='subjectsInput']")
 	WebElement subjectField;
 	@FindBy(xpath = "//label[@for='hobbies-checkbox-1']")
@@ -57,7 +74,8 @@ public class FormsPage extends TestBase{
 	public FormsPage() {
 		PageFactory.initElements(driver, this);
 		act = new Actions(driver);
-	
+		
+
 	}
 
 	public String verifyFormsText() {
@@ -99,9 +117,9 @@ public class FormsPage extends TestBase{
 		mobNumber.sendKeys(mNum);
 	}
 
-	//	public void selectDOB() {
-	//		dob.click();
-	//	}
+//	public void selectDOB() throws InterruptedException {
+//		
+//	}
 
 	public void enterSubject(String sub) throws InterruptedException {
 		Thread.sleep(2000);

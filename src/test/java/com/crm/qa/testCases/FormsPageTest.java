@@ -55,7 +55,7 @@ public class FormsPageTest extends TestBase{
 			frmPg.enterEmail(prop.getProperty("formEmail"));
 			frmPg.selectGenderRadioBtn();
 			frmPg.enterMobileNumber(prop.getProperty("formMobNumber"));
-			//			frmPg.selectDOB();
+			//						frmPg.selectDOB();
 			frmPg.enterSubject(prop.getProperty("forSubject"));
 			frmPg.selectHobbiesChkBx();
 			frmPg.enterCurrentAddress(prop.getProperty("formCurrentAddress"));
