@@ -35,7 +35,7 @@ public class FormsPageTest extends TestBase{
 		try {
 			String actFormText = frmPg.verifyFormsText();
 			Assert.assertEquals(actFormText, "Forms");
-			
+
 			String actPracticeFormtext = frmPg.verifyPracticeFormText();
 			Assert.assertEquals(actPracticeFormtext, "Practice Form");
 			frmPg.clickOnPracticeFormText();
@@ -44,19 +44,9 @@ public class FormsPageTest extends TestBase{
 		}
 	}
 
-
-
-
-
-
-
-
-
-
-
 	@AfterMethod
 	public void tearDown() {
-//		driver.quit();
+		//		driver.quit();
 	}
 
 }
