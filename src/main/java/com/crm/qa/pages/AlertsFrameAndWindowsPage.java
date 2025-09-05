@@ -1,5 +1,6 @@
 package com.crm.qa.pages;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
@@ -8,17 +9,19 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import com.crm.qa.base.TestBase;
 import com.crm.qa.util.TestUtil;
 
 public class AlertsFrameAndWindowsPage extends TestBase{
 
-	Actions act;
-	String mainWindow;
+	private Actions act;
+	private String mainWindow;
 	private TestUtil tstU;
+	private Alert alt;
 
 
-
+	//Browser Windows
 	@FindBy(xpath = "//div[text()='Alerts, Frame & Windows']")
 	WebElement clickAlertFramesAndWindows;
 	@FindBy(xpath ="(//li[@id='item-0'])[3]")
@@ -38,13 +41,40 @@ public class AlertsFrameAndWindowsPage extends TestBase{
 	@FindBy(xpath = "(//body)[1]")
 	WebElement newWindowMessageBtnText;
 
+	//Alerts
+	@FindBy(xpath = "(//li[@id='item-1'])[2]")
+	WebElement alertTextOnMenuBar;
+	@FindBy(xpath = "//h1[text()='Alerts']")
+	WebElement alertTextOnPage;
+	@FindBy(xpath = "//span[contains(text(),'Click Button to see alert ')]")
+	WebElement firstMessage;
+	@FindBy(xpath = "//button[contains(@id,'alertButton')]")
+	WebElement firstClickMe;
+	@FindBy(xpath = "(//span[contains(text(),'On button click')])[1]")
+	WebElement secondMessage;
+	@FindBy(xpath = "//button[contains(@id,'timerAlertButton')]")
+	WebElement secondClickMe;
+	@FindBy(xpath = "(//span[contains(text(),'On button click')])[2]")
+	WebElement thirdMessage;
+	@FindBy(xpath = "//button[contains(@id,'confirmButton')]")
+	WebElement thirdClickMe;
+	@FindBy(xpath = "//span[contains(@id,'confirmResult')]")
+	WebElement thirdResultMessageAfterClick;	
+	@FindBy(xpath = "(//span[contains(text(),'On button click')])[3]")
+	WebElement fourthMessage;
+	@FindBy(xpath = "//button[contains(@id,'promtButton')]")
+	WebElement fourthClickMe;
+	@FindBy(xpath = "//span[contains(@id,'promptResult')]")
+	WebElement fourthResultMessageAfterClick;
 
+	
 	//Constructor(Initializing the page objects)
 	public AlertsFrameAndWindowsPage() {
 		PageFactory.initElements(driver, this);
 		act = new Actions(driver);
 		mainWindow = driver.getWindowHandle();
 		tstU = new TestUtil();	
+		alt = driver.switchTo().alert();
 	}
 
 	public String verifyAlertsTabText() {
@@ -113,4 +143,69 @@ public class AlertsFrameAndWindowsPage extends TestBase{
 		tstU.switchToMainwindow();
 		//		return actTextNew;s
 	}
+
+
+	//Alerts
+	public String verifyAlertstextOnMenuBar() {
+		return alertTextOnMenuBar.getText();
+	}
+	
+	public void clickOnAlertTextOnMenuBar() {
+		alertTextOnMenuBar.click();
+	}
+	
+	public String verifyAlertTextOnPage() {
+		return alertTextOnPage.getText();
+	}
+	
+	public String verifyFirstMessage() {
+		return firstMessage.getText();
+	}
+	
+	public void clickOnFirstClickMe() {
+		firstClickMe.click();
+		Alert alt = driver.switchTo().alert();
+		alt.accept();
+	}
+	
+	public String verifySecondMesage() {
+		return secondMessage.getText();
+	}
+	
+	public void clikcOnSecondClickme() throws InterruptedException {
+		secondClickMe.click();
+		Thread.sleep(6000);
+		Alert alt = driver.switchTo().alert();
+		alt.accept();		
+	}
+	
+	public String verifyThirdMessage() {
+		return thirdMessage.getText();
+	}
+	
+	public void clickOnThirdClickMe() {
+		thirdClickMe.click();
+		Alert alt = driver.switchTo().alert();
+		alt.accept();				
+	}
+	
+	public String verifyResultAfterThirdClick() {
+		return thirdResultMessageAfterClick.getText();
+	}
+	
+	public String verifyFourthMessage() {
+		return fourthMessage.getText();
+	}
+	
+	public void clickOnFourthClickMe() {
+		fourthClickMe.click();
+		Alert alt = driver.switchTo().alert();
+		alt.sendKeys("Kappyyy");
+		alt.accept();
+	}
+	
+	public String verifyResultAfterFourthclick() {
+		return fourthResultMessageAfterClick.getText();
+	}
+
 }
