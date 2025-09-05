@@ -178,8 +178,8 @@ public class ElementsPage extends TestBase{
 		tstU = new TestUtil();		
 		act = new Actions(driver);
 	}
-	
-	
+
+
 	public String elementsText() {
 		return elementText.getText();
 	}
@@ -609,8 +609,6 @@ public class ElementsPage extends TestBase{
 	public FormsPage clickOnFormsBtn() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,500)");
-		
-//		Forms.sendKeys(Keys.PAGE_DOWN);
 		Forms.click();
 		return new FormsPage();
 	}

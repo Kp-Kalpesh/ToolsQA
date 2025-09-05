@@ -65,17 +65,7 @@ public class TestBase {
 
 		driver.get(prop.getProperty("Url"));
 
-//		WebDriverWait wait = new WebDriverWait(driver, (10));
-//
-//		try {
-//			WebElement element = wait.until(
-//					ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class ='avatar mx-auto white'])[1]"))
-//					);
-//			element.click();
-//		} catch (TimeoutException e) {
-//			System.out.println("Element was not found within the timeout period.");
-//			// Optional: Take screenshot or log error
-//		}
+
 
 	}
 

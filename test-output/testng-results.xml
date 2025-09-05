@@ -1,37 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-04T19:01:52 IST" name="Default suite" finished-at="2025-09-04T19:02:09 IST" duration-ms="17397">
+  <suite started-at="2025-09-05T17:40:36 IST" name="Default suite" finished-at="2025-09-05T17:41:06 IST" duration-ms="30149">
     <groups>
     </groups>
-    <test started-at="2025-09-04T19:01:52 IST" name="Default test" finished-at="2025-09-04T19:02:09 IST" duration-ms="17397">
-      <class name="com.crm.qa.testCases.FormsPageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.crm.qa.testCases.FormsPageTest@25ce9dc4]" started-at="2025-09-04T19:01:52 IST" name="setUp" finished-at="2025-09-04T19:01:56 IST" duration-ms="4181" status="PASS">
+    <test started-at="2025-09-05T17:40:36 IST" name="Default test" finished-at="2025-09-05T17:41:06 IST" duration-ms="30149">
+      <class name="com.crm.qa.testCases.AlertsFrameAndWindowsPageTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.crm.qa.testCases.AlertsFrameAndWindowsPageTest@173ed316]" started-at="2025-09-05T17:40:36 IST" name="setUp" finished-at="2025-09-05T17:40:40 IST" duration-ms="4218" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyFormsText()[pri:1, instance:com.crm.qa.testCases.FormsPageTest@25ce9dc4]" started-at="2025-09-04T19:01:56 IST" name="verifyFormsText" finished-at="2025-09-04T19:01:58 IST" duration-ms="2113" status="PASS">
+        <test-method signature="verifyAlertFrameWindowText()[pri:1, instance:com.crm.qa.testCases.AlertsFrameAndWindowsPageTest@173ed316]" started-at="2025-09-05T17:40:40 IST" name="verifyAlertFrameWindowText" finished-at="2025-09-05T17:41:06 IST" duration-ms="25778" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyFormsText -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.qa.testCases.FormsPageTest@25ce9dc4]" started-at="2025-09-04T19:01:58 IST" name="tearDown" finished-at="2025-09-04T19:01:58 IST" duration-ms="136" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.crm.qa.testCases.FormsPageTest@25ce9dc4]" started-at="2025-09-04T19:01:58 IST" name="setUp" finished-at="2025-09-04T19:02:02 IST" duration-ms="3649" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="verifySubmitForm()[pri:2, instance:com.crm.qa.testCases.FormsPageTest@25ce9dc4]" started-at="2025-09-04T19:02:02 IST" name="verifySubmitForm" finished-at="2025-09-04T19:02:09 IST" duration-ms="7175" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifySubmitForm -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.qa.testCases.FormsPageTest@25ce9dc4]" started-at="2025-09-04T19:02:09 IST" name="tearDown" finished-at="2025-09-04T19:02:09 IST" duration-ms="116" status="PASS">
+        </test-method> <!-- verifyAlertFrameWindowText -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.qa.testCases.AlertsFrameAndWindowsPageTest@173ed316]" started-at="2025-09-05T17:41:06 IST" name="tearDown" finished-at="2025-09-05T17:41:06 IST" duration-ms="128" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.crm.qa.testCases.FormsPageTest -->
+      </class> <!-- com.crm.qa.testCases.AlertsFrameAndWindowsPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

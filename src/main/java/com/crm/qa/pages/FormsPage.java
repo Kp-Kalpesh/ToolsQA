@@ -1,5 +1,6 @@
 package com.crm.qa.pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -12,7 +13,8 @@ import com.crm.qa.base.TestBase;
 public class FormsPage extends TestBase{
 	//	private TestUtil tstU;
 	private Actions act;
-	private Select se;
+//	private Select se;
+	JavascriptExecutor js;
 
 
 	//use Pagefactory
@@ -34,21 +36,16 @@ public class FormsPage extends TestBase{
 	WebElement mobNumber;
 	@FindBy(xpath = "//input[contains(@id,'dateOfBirthInput')]")
 	WebElement dob;
-	
+	@FindBy(xpath = "//input[@id='uploadPicture']")
+	WebElement uploadPic;
+
 	@FindBy(xpath = "//select//option[text()='August']")
 	WebElement selectMonth;
-
 	@FindBy(xpath = "//option[text()='1998']")
 	WebElement selectYr;
-
 	@FindBy(xpath = "(//div[text()='3'])[1]")
 	WebElement selectDate;
-	
-	
-	
-	
-	
-	
+
 	@FindBy(xpath = "//input[@id='subjectsInput']")
 	WebElement subjectField;
 	@FindBy(xpath = "//label[@for='hobbies-checkbox-1']")
@@ -67,15 +64,15 @@ public class FormsPage extends TestBase{
 	WebElement FullName;
 	@FindBy(xpath = "//button[@id='closeLargeModal']")
 	WebElement closeBtn;
-
+	@FindBy(xpath = "//div[text()='Alerts, Frame & Windows']")
+	WebElement clickAlertFramesAndWindows;
 
 
 	//Constructor(Initializing the page objects)
 	public FormsPage() {
 		PageFactory.initElements(driver, this);
 		act = new Actions(driver);
-		
-
+		js = (JavascriptExecutor) driver;
 	}
 
 	public String verifyFormsText() {
@@ -117,9 +114,9 @@ public class FormsPage extends TestBase{
 		mobNumber.sendKeys(mNum);
 	}
 
-//	public void selectDOB() throws InterruptedException {
-//		
-//	}
+	//	public void selectDOB() throws InterruptedException {
+	//		
+	//	}
 
 	public void enterSubject(String sub) throws InterruptedException {
 		Thread.sleep(2000);
@@ -131,6 +128,10 @@ public class FormsPage extends TestBase{
 	public void selectHobbiesChkBx() throws InterruptedException {
 		Thread.sleep(2000);
 		hobbiesChkBx.click();
+	}
+
+	public void selectPicture() {
+		uploadPic.sendKeys("D:\\GIFs\\72103ed7e6d5717d485ad1a7add690c6.jpg");
 	}
 
 	public void enterCurrentAddress(String cAddress) {
@@ -167,6 +168,11 @@ public class FormsPage extends TestBase{
 		closeBtn.click();
 	}
 
+	public AlertsFrameAndWindowsPage clickOnAlertsFramesAndwindowsTab() {		
+		js.executeScript("window.scrollBy(0,500)");
+		clickAlertFramesAndWindows.click();
+		return new AlertsFrameAndWindowsPage();
+	}
 }
 
 

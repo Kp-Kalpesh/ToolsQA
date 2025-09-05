@@ -58,6 +58,7 @@ public class FormsPageTest extends TestBase{
 			//						frmPg.selectDOB();
 			frmPg.enterSubject(prop.getProperty("forSubject"));
 			frmPg.selectHobbiesChkBx();
+			frmPg.selectPicture();
 			frmPg.enterCurrentAddress(prop.getProperty("formCurrentAddress"));
 			frmPg.selectState(prop.getProperty("userState"));
 			frmPg.selectCity(prop.getProperty("userCity"));
