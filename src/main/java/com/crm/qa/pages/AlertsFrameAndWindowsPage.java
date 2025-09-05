@@ -8,7 +8,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import com.crm.qa.base.TestBase;
 import com.crm.qa.util.TestUtil;
 
@@ -104,16 +103,14 @@ public class AlertsFrameAndWindowsPage extends TestBase{
 					);
 			String actTextNew = element.getText();
 			System.out.println("actTextNew: " + actTextNew);
-			
+
 		} catch (TimeoutException e) {
 			System.out.println("Element was not found within the timeout period.");
 			// Optional: Take screenshot or log error
 		}
-//		String actNewwindowMessageTxt = newWindowMessageBtnText.getText();
+		//		String actNewwindowMessageTxt = newWindowMessageBtnText.getText();
 		driver.close();
 		tstU.switchToMainwindow();
-//		return actTextNew;s
+		//		return actTextNew;s
 	}
-
-
 }

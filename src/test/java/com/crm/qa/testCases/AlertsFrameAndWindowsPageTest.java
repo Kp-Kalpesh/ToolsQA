@@ -45,22 +45,16 @@ public class AlertsFrameAndWindowsPageTest extends TestBase{
 			Assert.assertEquals(altpg.verifyNewWindowMessage(), "This is a sample page");
 			altpg.clickOnNewWindowMessageBtn();
 			altpg.verifyNewWindowMessageText();
-//			Assert.assertEquals(altpg.verifyNewWindowMessageText(), "Knowledge increases by sharing but not by saving. Please share this website with your friends and in your organization.");
-//			System.out.println("Message : " + altpg.verifyNewWindowMessageText());
-			
+			//			Assert.assertEquals(altpg.verifyNewWindowMessageText(), "Knowledge increases by sharing but not by saving. Please share this website with your friends and in your organization.");
+			//			System.out.println("Message : " + altpg.verifyNewWindowMessageText());
+
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}
-
 	}
-
-
-
-
 
 	@AfterMethod
 	public void tearDown() {
 		driver.quit();
 	}
-
 }
