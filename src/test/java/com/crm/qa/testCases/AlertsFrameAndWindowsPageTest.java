@@ -57,18 +57,59 @@ public class AlertsFrameAndWindowsPageTest extends TestBase{
 	@Test(priority = 2)
 	public void verifyAllAlertsMethos() {
 		try {
-			String altActualText = altpg.verifyAlertstextOnMenuBar();
-			System.out.println("verifyAlertstextOnMenuBar : " + altActualText);
+			Assert.assertEquals(altpg.verifyAlertstextOnMenuBar(), "Alerts");
 
+			altpg.clickOnAlertTextOnMenuBar();
+			Assert.assertEquals(altpg.verifyAlertTextOnPage(), "Alerts");
 
+			Assert.assertEquals(altpg.verifyFirstMessage(), "Click Button to see alert");
+			altpg.clickOnFirstClickMe();
 
+			Assert.assertEquals(altpg.verifySecondMesage(), "On button click, alert will appear after 5 seconds");
+			altpg.clikcOnSecondClickme();
 
+			Assert.assertEquals(altpg.verifyThirdMessage(), "On button click, confirm box will appear");
+			altpg.clickOnThirdClickMe();
+			Assert.assertEquals(altpg.verifyResultAfterThirdClick(), "You selected Ok");
 
-
-
+			Assert.assertEquals(altpg.verifyFourthMessage(), "On button click, prompt box will appear");
+			altpg.clickOnFourthClickMe("Kappyyy");;
+			Assert.assertEquals(altpg.verifyResultAfterFourthclick(), "You entered Kappyyy");
 
 		}catch(Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
+		}
+	}
+
+	@Test(priority = 3)
+	public void verifyFramesPage() throws InterruptedException {
+		try {
+			Assert.assertEquals(altpg.verifyFramesOnMenubar(), "Frames");
+			altpg.clickOnFramesText();
+			Assert.assertEquals(altpg.verigyFramesOnPage(), "Frames");
+			altpg.verifyFrameMessage();
+			Assert.assertEquals(altpg.verifyFrameMessage(), "This is a sample page");
+		} catch (Exception e) {
+			System.out.println("Element not found within timeout: " + e.getMessage());
+		}
+	}
+
+	@Test(priority = 4)
+	public void verifyModalDialogs() {
+		try {
+			Assert.assertEquals(altpg.verifyModaldialogTextOnMenuBar(), "Modal Dialogs");
+			altpg.clickOnModalDialogText();
+			Assert.assertEquals(altpg.verifyModalTextOnPage(), "Modal Dialogs");
+			altpg.clickOnSmallBtn();
+			Assert.assertEquals(altpg.verifyTextOnSmallModal(), "Small Modal");
+			altpg.clickOnCloseSmallModal();
+			altpg.clickOnLargeModalBtn();
+			Assert.assertEquals(altpg.verifyTextOnLargeModal(), "Large Modal");
+			altpg.closeLargeModal();
+
+		}catch (Exception e) {
+			System.out.println("Element not found within timeout: " + e.getMessage());
+
 		}
 	}
 

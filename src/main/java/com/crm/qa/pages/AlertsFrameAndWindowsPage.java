@@ -64,8 +64,36 @@ public class AlertsFrameAndWindowsPage extends TestBase{
 	WebElement fourthMessage;
 	@FindBy(xpath = "//button[contains(@id,'promtButton')]")
 	WebElement fourthClickMe;
+	@FindBy(xpath = "//iframe[@id='frame1']")
+	WebElement iFrame;
 	@FindBy(xpath = "//span[contains(@id,'promptResult')]")
 	WebElement fourthResultMessageAfterClick;
+
+	//Frames
+	@FindBy(xpath = "(//li[@id='item-2'])[2]")
+	WebElement framesTextOnMenuBar;
+	@FindBy(xpath = "//h1[text()='Frames']")
+	WebElement framesTextOnPage;
+	@FindBy(xpath = "//h1[@id='sampleHeading']")
+	WebElement frameMessage;
+
+	//Modal Dialogs
+	@FindBy(xpath = "(//li[@id='item-4'])[2]")
+	WebElement modalDialougeTextOnMenuBar;
+	@FindBy(xpath = "//h1[text()='Modal Dialogs']")
+	WebElement modalDialougeTextOnPage;
+	@FindBy(xpath = "//button[@id='showSmallModal']")
+	WebElement smallModalBtn;
+	@FindBy(xpath = "//div[text()='Small Modal']")
+	WebElement smallModalTextOnModal;
+	@FindBy(xpath = "//button[@id='closeSmallModal']")
+	WebElement smallModalCloseBtn;
+	@FindBy(xpath = "//button[@id='showLargeModal']")
+	WebElement largeModalBtn;
+	@FindBy(xpath = "//div[@id='example-modal-sizes-title-lg']")
+	WebElement largeModalTextOnModal;	
+	@FindBy(xpath = "//button[@id='showLargeModal']")
+	WebElement closeBtnOnLargeModal;
 
 
 	//Constructor(Initializing the page objects)
@@ -74,7 +102,7 @@ public class AlertsFrameAndWindowsPage extends TestBase{
 		act = new Actions(driver);
 		mainWindow = driver.getWindowHandle();
 		tstU = new TestUtil();	
-//		alt = driver.switchTo().alert();
+		//		alt = driver.switchTo().alert();
 	}
 
 	public String verifyAlertsTabText() {
@@ -146,7 +174,8 @@ public class AlertsFrameAndWindowsPage extends TestBase{
 
 
 	//Alerts
-	public String verifyAlertstextOnMenuBar() {
+	public String verifyAlertstextOnMenuBar() throws InterruptedException {
+		Thread.sleep(2000);
 		return alertTextOnMenuBar.getText();
 	}
 
@@ -197,15 +226,85 @@ public class AlertsFrameAndWindowsPage extends TestBase{
 		return fourthMessage.getText();
 	}
 
-	public void clickOnFourthClickMe() {
+	public void clickOnFourthClickMe(String key) {
 		fourthClickMe.click();
 		Alert alt = driver.switchTo().alert();
-		alt.sendKeys("Kappyyy");
+		alt.sendKeys(key);
 		alt.accept();
 	}
 
 	public String verifyResultAfterFourthclick() {
 		return fourthResultMessageAfterClick.getText();
 	}
+
+	//Frames
+	public String verifyFramesOnMenubar() throws InterruptedException {
+		Thread.sleep(2000);
+		return framesTextOnMenuBar.getText();
+	}
+
+	public void clickOnFramesText() {
+		framesTextOnMenuBar.click();
+	}
+
+	public String verigyFramesOnPage() {
+		return framesTextOnPage.getText();
+	}
+
+	public String verifyFrameMessage() throws InterruptedException {
+		Thread.sleep(2000);
+		driver.switchTo().frame(iFrame);
+		return frameMessage.getText();
+
+	}
+
+
+
+	//Modal Dialogs
+	public String verifyModaldialogTextOnMenuBar() throws InterruptedException {
+		Thread.sleep(2000);
+		return modalDialougeTextOnMenuBar.getText();
+	}
+
+	public void clickOnModalDialogText() {
+		modalDialougeTextOnMenuBar.click();
+	}
+
+	public String verifyModalTextOnPage() throws InterruptedException {
+		Thread.sleep(2000);
+		return modalDialougeTextOnPage.getText();
+	}
+
+	public void clickOnSmallBtn() {
+		smallModalBtn.click();
+	}
+
+	public String verifyTextOnSmallModal() throws InterruptedException {
+		Thread.sleep(2000);
+		return smallModalTextOnModal.getText();
+	}
+
+	public void clickOnCloseSmallModal() {
+		smallModalCloseBtn.click();
+	}
+
+	public void clickOnLargeModalBtn() {
+		largeModalBtn.click();
+	}
+
+	public String verifyTextOnLargeModal() throws InterruptedException {
+		Thread.sleep(2000);
+		return largeModalTextOnModal.getText();
+	}
+
+	public void closeLargeModal() {
+		closeBtnOnLargeModal.click();
+	}
+
+
+
+
+
+
 
 }
