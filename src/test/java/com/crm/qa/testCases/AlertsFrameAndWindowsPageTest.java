@@ -53,6 +53,25 @@ public class AlertsFrameAndWindowsPageTest extends TestBase{
 		}
 	}
 
+	//Alerts
+	@Test(priority = 2)
+	public void verifyAllAlertsMethos() {
+		try {
+			String altActualText = altpg.verifyAlertstextOnMenuBar();
+			System.out.println("verifyAlertstextOnMenuBar : " + altActualText);
+
+
+
+
+
+
+
+
+		}catch(Exception e) {
+			System.out.println("Element not found within timeout: " + e.getMessage());
+		}
+	}
+
 	@AfterMethod
 	public void tearDown() {
 		driver.quit();

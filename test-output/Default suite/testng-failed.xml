@@ -7,6 +7,7 @@
         <methods>
           <include name="tearDown"/>
           <include name="verifyAlertFrameWindowText"/>
+          <include name="verifyAllAlertsMethos"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- com.crm.qa.testCases.AlertsFrameAndWindowsPageTest -->

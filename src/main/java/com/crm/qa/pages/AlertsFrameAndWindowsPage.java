@@ -67,14 +67,14 @@ public class AlertsFrameAndWindowsPage extends TestBase{
 	@FindBy(xpath = "//span[contains(@id,'promptResult')]")
 	WebElement fourthResultMessageAfterClick;
 
-	
+
 	//Constructor(Initializing the page objects)
 	public AlertsFrameAndWindowsPage() {
 		PageFactory.initElements(driver, this);
 		act = new Actions(driver);
 		mainWindow = driver.getWindowHandle();
 		tstU = new TestUtil();	
-		alt = driver.switchTo().alert();
+//		alt = driver.switchTo().alert();
 	}
 
 	public String verifyAlertsTabText() {
@@ -149,61 +149,61 @@ public class AlertsFrameAndWindowsPage extends TestBase{
 	public String verifyAlertstextOnMenuBar() {
 		return alertTextOnMenuBar.getText();
 	}
-	
+
 	public void clickOnAlertTextOnMenuBar() {
 		alertTextOnMenuBar.click();
 	}
-	
+
 	public String verifyAlertTextOnPage() {
 		return alertTextOnPage.getText();
 	}
-	
+
 	public String verifyFirstMessage() {
 		return firstMessage.getText();
 	}
-	
+
 	public void clickOnFirstClickMe() {
 		firstClickMe.click();
 		Alert alt = driver.switchTo().alert();
 		alt.accept();
 	}
-	
+
 	public String verifySecondMesage() {
 		return secondMessage.getText();
 	}
-	
+
 	public void clikcOnSecondClickme() throws InterruptedException {
 		secondClickMe.click();
 		Thread.sleep(6000);
 		Alert alt = driver.switchTo().alert();
 		alt.accept();		
 	}
-	
+
 	public String verifyThirdMessage() {
 		return thirdMessage.getText();
 	}
-	
+
 	public void clickOnThirdClickMe() {
 		thirdClickMe.click();
 		Alert alt = driver.switchTo().alert();
 		alt.accept();				
 	}
-	
+
 	public String verifyResultAfterThirdClick() {
 		return thirdResultMessageAfterClick.getText();
 	}
-	
+
 	public String verifyFourthMessage() {
 		return fourthMessage.getText();
 	}
-	
+
 	public void clickOnFourthClickMe() {
 		fourthClickMe.click();
 		Alert alt = driver.switchTo().alert();
 		alt.sendKeys("Kappyyy");
 		alt.accept();
 	}
-	
+
 	public String verifyResultAfterFourthclick() {
 		return fourthResultMessageAfterClick.getText();
 	}
