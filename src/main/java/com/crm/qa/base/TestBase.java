@@ -40,8 +40,6 @@ public class TestBase {
 		}
 	}   
 
-
-
 	public static void initialization()
 	{
 		String browserName = prop.getProperty("Browser");
@@ -64,17 +62,5 @@ public class TestBase {
 		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
 
 		driver.get(prop.getProperty("Url"));
-
-
-
 	}
-
-
-
-
-
-
-
-
-
 }

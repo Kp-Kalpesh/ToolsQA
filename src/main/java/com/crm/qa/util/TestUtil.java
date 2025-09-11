@@ -22,7 +22,7 @@ public class TestUtil extends TestBase{
 		wt = new WebDriverWait(driver, 10); 
 
 	}
-	
+
 	public void windowHandleCode() {
 		Set<String> windowHandles = driver.getWindowHandles();
 		mainWindow = driver.getWindowHandle();
@@ -41,6 +41,4 @@ public class TestUtil extends TestBase{
 	public void switchToMainwindow() {
 		driver.switchTo().window(mainWindow);
 	}
-	
-	
 }
