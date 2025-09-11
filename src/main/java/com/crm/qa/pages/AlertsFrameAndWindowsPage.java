@@ -94,6 +94,8 @@ public class AlertsFrameAndWindowsPage extends TestBase{
 	WebElement largeModalTextOnModal;	
 	@FindBy(xpath = "//button[@id='showLargeModal']")
 	WebElement closeBtnOnLargeModal;
+	@FindBy(xpath = "//div[text()='Widgets']")
+	WebElement WidgetTab;
 
 
 	//Constructor(Initializing the page objects)
@@ -300,11 +302,9 @@ public class AlertsFrameAndWindowsPage extends TestBase{
 	public void closeLargeModal() {
 		closeBtnOnLargeModal.click();
 	}
-
-
-
-
-
-
-
+	
+	public WidgetsPage clickOnWidgetsTab() {
+		WidgetTab.click();
+		return new WidgetsPage();
+	}
 }

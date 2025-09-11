@@ -61,13 +61,10 @@ public class AlertsFrameAndWindowsPageTest extends TestBase{
 
 			altpg.clickOnAlertTextOnMenuBar();
 			Assert.assertEquals(altpg.verifyAlertTextOnPage(), "Alerts");
-
 			Assert.assertEquals(altpg.verifyFirstMessage(), "Click Button to see alert");
 			altpg.clickOnFirstClickMe();
-
 			Assert.assertEquals(altpg.verifySecondMesage(), "On button click, alert will appear after 5 seconds");
 			altpg.clikcOnSecondClickme();
-
 			Assert.assertEquals(altpg.verifyThirdMessage(), "On button click, confirm box will appear");
 			altpg.clickOnThirdClickMe();
 			Assert.assertEquals(altpg.verifyResultAfterThirdClick(), "You selected Ok");
