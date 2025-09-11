@@ -69,9 +69,24 @@ public class WidgetsPageTest extends TestBase{
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}
 	}
+	
+	@Test(priority = 3)
+	public void verifySliderTab() {
+		try {
+			
+			Assert.assertEquals(widpg.verifySliderTextOnMenuBar(), "Slider");
+			widpg.clickOnsliderTab();
+			Assert.assertEquals(widpg.verifySliderTextOnPage(), "Slider");
+			widpg.slideTheHorizontalScroll();
+			Assert.assertEquals(widpg.verifyResultValue(), "58");
+			
+		}catch (Exception e) {
+			System.out.println("Element not found within timeout: " + e.getMessage());
+		}
+	}
 
 	@AfterMethod
 	public void tearDown() {
-		driver.quit();
+//		driver.quit();
 	}
 }

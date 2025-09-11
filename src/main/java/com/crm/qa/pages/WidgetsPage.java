@@ -39,9 +39,9 @@ public class WidgetsPage extends TestBase{
 	WebElement sliderTabOnMenuBar;
 	@FindBy(xpath = "//h1[text()='Slider']")
 	WebElement sliderTextonPage;
-	@FindBy(xpath = "//input[@class='range-slider range-slider--primary']")
+	@FindBy(xpath = "//input[@type='range']")
 	WebElement sliderHorScroll;
-	@FindBy(xpath = "//input[@id='sliderValue']")
+	@FindBy(xpath = "//div[@class='range-slider__tooltip__label']")
 	WebElement silderValue;
 
 	@FindBy(xpath = "(//li[@id='item-4'])[3]")
@@ -124,20 +124,41 @@ public class WidgetsPage extends TestBase{
 			Thread.sleep(1000);
 			act.sendKeys(Keys.ENTER).perform();
 			act.sendKeys(Keys.TAB).perform();
-			
+
 		} catch (Exception e) {
 			System.err.println("Test failed due to: " + e.getClass().getName() + " - " + e.getMessage());
 			e.printStackTrace();
 			Assert.fail("Test failed due to: " + e.getMessage());
 		}
-		//		multipleColorNames.click();
-		//		multipleColorNames.sendKeys(Red, Green, Black);
 	}
 
 	public void enterSingleColorName(String white) throws InterruptedException {
 		act.sendKeys(singleColorNames, white).perform();
 		Thread.sleep(1000);
 		act.sendKeys(Keys.ENTER).perform();
+	}
+
+	//Slider
+	public String verifySliderTextOnMenuBar() throws InterruptedException {
+		Thread.sleep(2000);
+		return sliderTabOnMenuBar.getText();
+	}
+
+	public void clickOnsliderTab() {
+		sliderTabOnMenuBar.click();
+	}
+
+	public String verifySliderTextOnPage() {
+		return sliderTextonPage.getText();
+	}
+
+	public void slideTheHorizontalScroll() throws InterruptedException {
+		Thread.sleep(1000);
+		act.clickAndHold(sliderHorScroll).moveByOffset(50, 0).release().perform();
+	}
+
+	public String verifyResultValue() {
+		return silderValue.getText();
 	}
 
 }
