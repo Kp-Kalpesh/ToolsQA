@@ -50,6 +50,8 @@ public class WidgetsPage extends TestBase{
 	WebElement ProgressTextOnPage;
 	@FindBy(xpath = "//button[@id='startStopButton']")
 	WebElement startStopBtn;
+	@FindBy(xpath = "//div[@role='progressbar']")
+	WebElement runningTaskStatus;
 	@FindBy(xpath = "//button[@id='resetButton']")
 	WebElement resetBtn;
 	@FindBy(xpath = "//div[@class='progress-bar bg-success']")
@@ -161,4 +163,44 @@ public class WidgetsPage extends TestBase{
 		return silderValue.getText();
 	}
 
+	//ProgressBar
+	public String verifyProgressBarTextOnMenuBar() throws InterruptedException {
+		Thread.sleep(3000);
+		return ProgressBarTextOnMenuBar.getText();
+	}
+
+	public void clickOnProgressBartextonMenu() {
+		ProgressBarTextOnMenuBar.click();
+	}
+
+	public String verifyProgressBarTextOnPage() {
+		return ProgressTextOnPage.getText();
+	}
+
+	public void clickOnStartBtn() {
+		startStopBtn.click();
+	}
+
+	public void clickOnStopBtn() throws InterruptedException {
+		Thread.sleep(5000);
+		startStopBtn.click();
+	}
+
+	public String verifyRunningProgressBar() {
+		return runningTaskStatus.getText();
+	}
+
+	public void clickOnAgainStartBtn() throws InterruptedException {
+		Thread.sleep(3000);
+		startStopBtn.click();
+	}
+
+	public String verifyCompletedProgressBarTxt() throws InterruptedException {
+		Thread.sleep(7000);
+		return getProgressBarText.getText();
+	}
+
+	public void clickOnResetBtn() {
+		resetBtn.click();
+	}
 }

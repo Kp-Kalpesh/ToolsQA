@@ -69,17 +69,35 @@ public class WidgetsPageTest extends TestBase{
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}
 	}
-	
+
 	@Test(priority = 3)
 	public void verifySliderTab() {
 		try {
-			
+
 			Assert.assertEquals(widpg.verifySliderTextOnMenuBar(), "Slider");
 			widpg.clickOnsliderTab();
 			Assert.assertEquals(widpg.verifySliderTextOnPage(), "Slider");
 			widpg.slideTheHorizontalScroll();
 			Assert.assertEquals(widpg.verifyResultValue(), "58");
-			
+
+		}catch (Exception e) {
+			System.out.println("Element not found within timeout: " + e.getMessage());
+		}
+	}
+
+	@Test(priority = 4)
+	public void verifyProgressBar() {
+		try {
+			Assert.assertEquals(widpg.verifyProgressBarTextOnMenuBar(), "Progress Bar");	
+			widpg.clickOnProgressBartextonMenu();
+			Assert.assertEquals(widpg.verifyProgressBarTextOnPage(), "Progress Bar");
+			widpg.clickOnStartBtn();
+			widpg.clickOnStopBtn();
+			Assert.assertEquals(widpg.verifyRunningProgressBar(), "50%");
+			System.out.println("verifyRunningProgressBar: " + widpg.verifyRunningProgressBar());
+			widpg.clickOnAgainStartBtn();
+			Assert.assertEquals(widpg.verifyCompletedProgressBarTxt(), "100%");
+			widpg.clickOnResetBtn();
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}
@@ -87,6 +105,6 @@ public class WidgetsPageTest extends TestBase{
 
 	@AfterMethod
 	public void tearDown() {
-//		driver.quit();
+		driver.quit();
 	}
 }
