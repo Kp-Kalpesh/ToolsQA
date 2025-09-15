@@ -6,11 +6,8 @@
       <class name="com.crm.qa.testCases.WidgetsPageTest">
         <methods>
           <include name="tearDown"/>
-          <include name="verifySliderTab"/>
           <include name="setup"/>
-          <include name="verifyAutoCompleteTab"/>
-          <include name="verifyWidgetsAccordianTab"/>
-          <include name="verifyProgressBar"/>
+          <include name="verifyTabs"/>
         </methods>
       </class> <!-- com.crm.qa.testCases.WidgetsPageTest -->
     </classes>

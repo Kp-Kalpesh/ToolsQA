@@ -58,6 +58,35 @@ public class WidgetsPage extends TestBase{
 	WebElement getProgressBarText;
 
 
+	//Tabs
+	@FindBy(xpath = "(//li[@id='item-5'])[2]")
+	WebElement tabsTextOnMenuBar;
+	@FindBy(xpath = "//h1[text()='Tabs']")
+	WebElement TabsTxtOnPage;
+	@FindBy(xpath = "//a[text()='What']")
+	WebElement verifyWhatTxt;
+	@FindBy(xpath = "//a[text()='Origin']")
+	WebElement verifyOriginTxt;
+	@FindBy(xpath = "//a[text()='Origin']")
+	WebElement clickOnOrigin;
+	@FindBy(xpath = "//a[text()='Use']")
+	WebElement verifyUseTxt;
+	@FindBy(xpath = "//a[text()='Use']")
+	WebElement clickOnUse;
+	@FindBy(xpath = "//a[text()='More']")
+	WebElement verifyMoreTxt;
+
+
+
+
+
+
+
+
+
+
+
+
 
 	//Constructor
 	public WidgetsPage() {
@@ -202,5 +231,52 @@ public class WidgetsPage extends TestBase{
 
 	public void clickOnResetBtn() {
 		resetBtn.click();
+	}
+
+	//Tabs
+	public String verifyTabsTxtOnMenuBar() throws InterruptedException {
+		Thread.sleep(3000);
+		act.sendKeys(tabsTextOnMenuBar, Keys.PAGE_DOWN).perform();
+		return tabsTextOnMenuBar.getText();
+	}
+
+	public void clickOnTabsTxtOnMenuBar() throws InterruptedException {
+		Thread.sleep(1000);
+		tabsTextOnMenuBar.click();
+	}
+
+	public String verifyTabsTxtOnPage() throws InterruptedException {
+		Thread.sleep(1000);
+		return TabsTxtOnPage.getText();
+	}
+
+	public String verifyWhatTxt() throws InterruptedException {
+		Thread.sleep(1000);
+		return verifyWhatTxt.getText();
+	}
+
+	public String verifyOriginTxt() throws InterruptedException {
+		Thread.sleep(1000);
+		return verifyOriginTxt.getText();
+	}
+
+	public void clickOnOrigin() throws InterruptedException {
+		Thread.sleep(1000);
+		clickOnOrigin.click();
+	}
+
+	public String verifyUseTxt() throws InterruptedException {
+		Thread.sleep(1000);
+		return verifyUseTxt.getText();
+	}
+
+	public void clickOnUse() throws InterruptedException {
+		Thread.sleep(2000);
+		clickOnUse.click();
+	}
+
+	public String verifyMoreText() throws InterruptedException {
+		Thread.sleep(1000);
+		return verifyMoreTxt.getText();
 	}
 }

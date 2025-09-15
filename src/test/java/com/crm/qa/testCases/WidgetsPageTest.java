@@ -103,6 +103,30 @@ public class WidgetsPageTest extends TestBase{
 		}
 	}
 
+
+	@Test(priority = 5)
+	public void verifyTabs() {
+		try {
+			Assert.assertEquals(widpg.verifyTabsTxtOnMenuBar(), "Tabs");
+			widpg.clickOnTabsTxtOnMenuBar();
+			Assert.assertEquals(widpg.verifyTabsTxtOnPage(), "Tabs");
+			Assert.assertEquals(widpg.verifyWhatTxt(), "What");
+			Assert.assertEquals(widpg.verifyOriginTxt(), "Origin");
+			widpg.clickOnOrigin();
+			Assert.assertEquals(widpg.verifyUseTxt(), "Use");
+			widpg.clickOnUse();
+			Assert.assertEquals(widpg.verifyMoreText(), "More");
+
+		}catch (Exception e) {
+			System.out.println("Element not found within timeout: " + e.getMessage());
+		}
+
+	}
+
+
+
+
+
 	@AfterMethod
 	public void tearDown() {
 		driver.quit();
