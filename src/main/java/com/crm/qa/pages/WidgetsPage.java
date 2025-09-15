@@ -76,9 +76,19 @@ public class WidgetsPage extends TestBase{
 	@FindBy(xpath = "//a[text()='More']")
 	WebElement verifyMoreTxt;
 
-
-
-
+	//ToolTips
+	@FindBy(xpath = "(//li[@id='item-6'])[2]")
+	WebElement toolTiptxtOnMenu;
+	@FindBy(xpath = "//h1[text()='Tool Tips']")
+	WebElement toolTiptxtOnPage;
+	@FindBy(xpath = "//button[@id='toolTipButton']")
+	WebElement hoverMeToSeeBtn;
+	@FindBy(xpath = "//div[text()='You hovered over the Button']")
+	WebElement btnTooltipTxt;
+	@FindBy(xpath = "//input[@id='toolTipTextField']")
+	WebElement hoverInputField;
+	@FindBy(xpath = "//div[text()='You hovered over the text field']")
+	WebElement inputFieldTooltipTxt;
 
 
 
@@ -278,5 +288,38 @@ public class WidgetsPage extends TestBase{
 	public String verifyMoreText() throws InterruptedException {
 		Thread.sleep(1000);
 		return verifyMoreTxt.getText();
+	}
+
+	//Tooltips
+	public String verifyToolTiptextOnMenu() throws InterruptedException {
+		Thread.sleep(2000);
+		act.sendKeys(tabsTextOnMenuBar, Keys.PAGE_DOWN).perform();
+		return toolTiptxtOnMenu.getText();
+	}
+
+	public void clickOnToolTipTxt() throws InterruptedException {
+		Thread.sleep(1000);
+		toolTiptxtOnMenu.click();
+	}
+
+	public String verifyTooltipTxtOnPage() {
+		return toolTiptxtOnPage.getText();
+	}
+
+	public void hoverMouseOnBtn() {
+		act.click(hoverMeToSeeBtn).perform();
+	}
+
+	public String verifyBtnHoverText() throws InterruptedException {
+		Thread.sleep(1000);
+		return btnTooltipTxt.getText();
+	}
+
+	public void hoverMouseOnInputField() {
+		act.click(hoverInputField).perform();
+	}
+
+	public String verifyInputFieldTooltiptxt() {
+		return inputFieldTooltipTxt.getText();
 	}
 }

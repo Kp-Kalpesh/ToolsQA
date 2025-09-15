@@ -120,12 +120,26 @@ public class WidgetsPageTest extends TestBase{
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}
-
 	}
 
 
+	@Test(priority = 6)
+	public void verifyToolTips() {
+		try {
+			Assert.assertEquals(widpg.verifyToolTiptextOnMenu(), "Tool Tips");
+			widpg.clickOnToolTipTxt();
+			Assert.assertEquals(widpg.verifyTooltipTxtOnPage(), "Tool Tips");
+			widpg.hoverMouseOnBtn();
+			System.out.println("verifyBtnHoverText: " + widpg.verifyBtnHoverText());
+			Assert.assertEquals(widpg.verifyBtnHoverText(), "You hovered over the Button");
+			widpg.hoverMouseOnInputField();
+			System.out.println("verifyInputFieldTooltiptxt:" + widpg.verifyInputFieldTooltiptxt());
+			Assert.assertEquals(widpg.verifyInputFieldTooltiptxt(), "You hovered over the text field");
 
-
+		}catch (Exception e) {
+			System.out.println("Element not found within timeout: " + e.getMessage());
+		}
+	}
 
 	@AfterMethod
 	public void tearDown() {
