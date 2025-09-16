@@ -90,12 +90,27 @@ public class WidgetsPage extends TestBase{
 	@FindBy(xpath = "//div[text()='You hovered over the text field']")
 	WebElement inputFieldTooltipTxt;
 
-
-
-
-
-
-
+	//menu
+	@FindBy(xpath = "(//li[@id='item-7'])[2]")
+	WebElement menuTextOnMenuBar;	
+	@FindBy(xpath = "//h1[text()='Menu']")
+	WebElement menuTxtOnPage;
+	@FindBy(xpath = "//a[text()='Main Item 1']")
+	WebElement mainItem_1;
+	@FindBy(xpath = "//a[text()='Main Item 2']")
+	WebElement mainItem_2;
+	@FindBy(xpath = "(//a[text()='Sub Item'])[1]")
+	WebElement subItem_1;
+	@FindBy(xpath = "(//a[text()='Sub Item'])[2]")
+	WebElement subItem_2;
+	@FindBy(xpath = "//a[text()='SUB SUB LIST »']")
+	WebElement subList;
+	@FindBy(xpath = "//a[text()='Sub Sub Item 1']")
+	WebElement subSubItem_1;
+	@FindBy(xpath = "//a[text()='Sub Sub Item 2']")
+	WebElement subSubItem_2;
+	@FindBy(xpath = "//a[text()='Main Item 3']")
+	WebElement mainItem_3;
 
 
 	//Constructor
@@ -321,5 +336,55 @@ public class WidgetsPage extends TestBase{
 
 	public String verifyInputFieldTooltiptxt() {
 		return inputFieldTooltipTxt.getText();
+	}
+
+	//Menu
+	public String verifyMenuTxtOnMenuBar() throws InterruptedException {
+		Thread.sleep(3000);
+		act.sendKeys(menuTextOnMenuBar, Keys.PAGE_DOWN);
+		return menuTextOnMenuBar.getText();
+	}
+
+	public void clickOnMenuTxtOnMenuBar() {
+		menuTextOnMenuBar.click();
+	}
+
+	public String verifyMenuTxtOnPage() {
+		return menuTxtOnPage.getText();
+	}
+
+	public String verifyMainItem1() {
+		return mainItem_1.getText();
+	}
+
+	public String verifyMainItem2() {
+		return mainItem_2.getText();
+	}
+
+	public String verifySubItem1() {
+		act.moveToElement(mainItem_2);
+		return subItem_1.getText();
+	}
+
+	public String verifySubItem2() {
+		//		act.moveToElement(mainItem_2);
+		return subItem_2.getText();
+	}
+
+	public String verifySubList() {
+		return subList.getText();
+	}
+
+	public String verifySubListitem1() {
+		act.sendKeys(subList);
+		return subSubItem_1.getText();
+	}
+
+	public String verifySubListItem2() {
+		return subSubItem_2.getText();
+	}
+
+	public String verifyMainItem3() {
+		return mainItem_3.getText();
 	}
 }

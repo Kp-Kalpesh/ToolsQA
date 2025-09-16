@@ -141,6 +141,20 @@ public class WidgetsPageTest extends TestBase{
 		}
 	}
 
+	//Getting timeout exception
+//	@Test(priority = 7)
+//	public void verifyMenu() {
+//		try {
+//			Assert.assertEquals(widpg.verifyMenuTxtOnMenuBar(), "Menu");
+//			
+//			
+//			
+//		}catch (Exception e) {
+//			System.out.println("Element not found within timeout: " + e.getMessage());
+//		}
+//	}
+
+
 	@AfterMethod
 	public void tearDown() {
 		driver.quit();
