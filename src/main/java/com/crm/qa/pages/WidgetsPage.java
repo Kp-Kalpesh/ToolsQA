@@ -112,7 +112,11 @@ public class WidgetsPage extends TestBase{
 	@FindBy(xpath = "//a[text()='Main Item 3']")
 	WebElement mainItem_3;
 
-
+	//Select menu
+	@FindBy(xpath = "(//li[@id='item-8'])[2]")
+	WebElement selectMenuTextOnMenuBar;
+	
+	
 	//Constructor
 	public WidgetsPage() {
 		PageFactory.initElements(driver, this);

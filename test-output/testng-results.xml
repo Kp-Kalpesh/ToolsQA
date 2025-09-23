@@ -2,30 +2,30 @@
 <testng-results ignored="6" total="7" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-16T11:07:03 IST" name="Default suite" finished-at="2025-09-16T11:07:14 IST" duration-ms="11051">
+  <suite started-at="2025-09-23T18:43:50 IST" name="Default suite" finished-at="2025-09-23T18:44:01 IST" duration-ms="11162">
     <groups>
     </groups>
-    <test started-at="2025-09-16T11:07:03 IST" name="Default test" finished-at="2025-09-16T11:07:14 IST" duration-ms="11051">
+    <test started-at="2025-09-23T18:43:50 IST" name="Default test" finished-at="2025-09-23T18:44:01 IST" duration-ms="11162">
       <class name="com.crm.qa.testCases.WidgetsPageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.crm.qa.testCases.WidgetsPageTest@3e8c3cb]" started-at="2025-09-16T11:07:03 IST" name="setup" finished-at="2025-09-16T11:07:14 IST" duration-ms="11022" status="FAIL">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.crm.qa.testCases.WidgetsPageTest@3e8c3cb]" started-at="2025-09-23T18:43:50 IST" name="setup" finished-at="2025-09-23T18:44:01 IST" duration-ms="11131" status="FAIL">
           <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[timeout: Timed out receiving message from renderer: 8.255
-  (Session info: chrome=140.0.7339.128)
+              <![CDATA[timeout: Timed out receiving message from renderer: 9.306
+  (Session info: chrome=140.0.7339.185)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DESKTOP-SO5U9F0', ip: '192.168.1.65', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.128, chrome: {chromedriverVersion: 140.0.7339.82 (bc93617e21c3..., userDataDir: C:\Users\wcg112\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54845}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 078c76a1319d7cdb3d3297540a404d81]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.185, chrome: {chromedriverVersion: 140.0.7339.185 (eeea00e459e..., userDataDir: C:\Users\wcg112\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52406}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0f8d78a61bad0bd879e52a881a441c0f]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: 8.255
-  (Session info: chrome=140.0.7339.128)
+              <![CDATA[org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: 9.306
+  (Session info: chrome=140.0.7339.185)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DESKTOP-SO5U9F0', ip: '192.168.1.65', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.128, chrome: {chromedriverVersion: 140.0.7339.82 (bc93617e21c3..., userDataDir: C:\Users\wcg112\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54845}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 078c76a1319d7cdb3d3297540a404d81
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.185, chrome: {chromedriverVersion: 140.0.7339.185 (eeea00e459e..., userDataDir: C:\Users\wcg112\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52406}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0f8d78a61bad0bd879e52a881a441c0f
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -78,25 +78,25 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyMenu()[pri:7, instance:com.crm.qa.testCases.WidgetsPageTest@3e8c3cb]" started-at="2025-09-16T11:07:14 IST" name="verifyMenu" finished-at="2025-09-16T11:07:14 IST" duration-ms="0" status="SKIP">
+        <test-method signature="verifyMenu()[pri:7, instance:com.crm.qa.testCases.WidgetsPageTest@3e8c3cb]" started-at="2025-09-23T18:44:01 IST" name="verifyMenu" finished-at="2025-09-23T18:44:01 IST" duration-ms="0" status="SKIP">
           <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[timeout: Timed out receiving message from renderer: 8.255
-  (Session info: chrome=140.0.7339.128)
+              <![CDATA[timeout: Timed out receiving message from renderer: 9.306
+  (Session info: chrome=140.0.7339.185)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DESKTOP-SO5U9F0', ip: '192.168.1.65', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.128, chrome: {chromedriverVersion: 140.0.7339.82 (bc93617e21c3..., userDataDir: C:\Users\wcg112\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54845}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 078c76a1319d7cdb3d3297540a404d81]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.185, chrome: {chromedriverVersion: 140.0.7339.185 (eeea00e459e..., userDataDir: C:\Users\wcg112\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52406}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0f8d78a61bad0bd879e52a881a441c0f]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: 8.255
-  (Session info: chrome=140.0.7339.128)
+              <![CDATA[org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: 9.306
+  (Session info: chrome=140.0.7339.185)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DESKTOP-SO5U9F0', ip: '192.168.1.65', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.128, chrome: {chromedriverVersion: 140.0.7339.82 (bc93617e21c3..., userDataDir: C:\Users\wcg112\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54845}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 078c76a1319d7cdb3d3297540a404d81
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.185, chrome: {chromedriverVersion: 140.0.7339.185 (eeea00e459e..., userDataDir: C:\Users\wcg112\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52406}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0f8d78a61bad0bd879e52a881a441c0f
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -149,7 +149,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyMenu -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.qa.testCases.WidgetsPageTest@3e8c3cb]" started-at="2025-09-16T11:07:14 IST" name="tearDown" finished-at="2025-09-16T11:07:14 IST" duration-ms="0" status="SKIP">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.qa.testCases.WidgetsPageTest@3e8c3cb]" started-at="2025-09-23T18:44:01 IST" name="tearDown" finished-at="2025-09-23T18:44:01 IST" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
