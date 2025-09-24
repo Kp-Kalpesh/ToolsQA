@@ -345,11 +345,12 @@ public class WidgetsPage extends TestBase{
 	//Menu
 	public String verifyMenuTxtOnMenuBar() throws InterruptedException {
 		Thread.sleep(3000);
-		act.sendKeys(menuTextOnMenuBar, Keys.PAGE_DOWN);
+		act.sendKeys(menuTextOnMenuBar, Keys.PAGE_DOWN).perform();
 		return menuTextOnMenuBar.getText();
 	}
 
-	public void clickOnMenuTxtOnMenuBar() {
+	public void clickOnMenuTxtOnMenuBar() throws InterruptedException {
+		Thread.sleep(3000);
 		menuTextOnMenuBar.click();
 	}
 
@@ -365,30 +366,36 @@ public class WidgetsPage extends TestBase{
 		return mainItem_2.getText();
 	}
 
-	public String verifySubItem1() {
-		act.moveToElement(mainItem_2);
+	public String verifySubItem1() throws InterruptedException {
+		Thread.sleep(2000);
+		act.moveToElement(mainItem_2).perform();
 		return subItem_1.getText();
 	}
 
-	public String verifySubItem2() {
+	public String verifySubItem2() throws InterruptedException {
+		Thread.sleep(2000);
 		//		act.moveToElement(mainItem_2);
 		return subItem_2.getText();
 	}
 
-	public String verifySubList() {
+	public String verifySubList() throws InterruptedException {
+		Thread.sleep(2000);
 		return subList.getText();
 	}
 
-	public String verifySubListitem1() {
-		act.sendKeys(subList);
+	public String verifySubListitem1() throws InterruptedException {
+		Thread.sleep(2000);
+		act.moveToElement(subList).perform();
 		return subSubItem_1.getText();
 	}
 
-	public String verifySubListItem2() {
+	public String verifySubListItem2() throws InterruptedException {
+		Thread.sleep(2000);
 		return subSubItem_2.getText();
 	}
 
-	public String verifyMainItem3() {
+	public String verifyMainItem3() throws InterruptedException {
+		Thread.sleep(2000);
 		return mainItem_3.getText();
 	}
 }

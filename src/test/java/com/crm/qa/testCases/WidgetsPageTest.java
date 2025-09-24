@@ -142,17 +142,25 @@ public class WidgetsPageTest extends TestBase{
 	}
 
 	//Getting timeout exception
-//	@Test(priority = 7)
-//	public void verifyMenu() {
-//		try {
-//			Assert.assertEquals(widpg.verifyMenuTxtOnMenuBar(), "Menu");
-//			
-//			
-//			
-//		}catch (Exception e) {
-//			System.out.println("Element not found within timeout: " + e.getMessage());
-//		}
-//	}
+	@Test(priority = 7)
+	public void verifyMenu() {
+		try {
+			Assert.assertEquals(widpg.verifyMenuTxtOnMenuBar(), "Menu");
+			widpg.clickOnMenuTxtOnMenuBar();
+			Assert.assertEquals(widpg.verifyMenuTxtOnPage(), "Menu");
+			Assert.assertEquals(widpg.verifyMainItem1(), "Main Item 1");
+			Assert.assertEquals(widpg.verifyMainItem2(), "Main Item 2");
+			Assert.assertEquals(widpg.verifySubItem1(), "Sub Item");
+			Assert.assertEquals(widpg.verifySubItem2(), "Sub Item");
+			Assert.assertEquals(widpg.verifySubList(), "SUB SUB LIST »");
+			Assert.assertEquals(widpg.verifySubListitem1(), "Sub Sub Item 1");
+			Assert.assertEquals(widpg.verifySubListItem2(), "Sub Sub Item 2");
+			Assert.assertEquals(widpg.verifyMainItem3(), "Main Item 3");
+
+		}catch (Exception e) {
+			System.out.println("Element not found within timeout: " + e.getMessage());
+		}
+	}
 
 
 	@AfterMethod
