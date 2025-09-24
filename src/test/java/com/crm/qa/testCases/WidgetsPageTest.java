@@ -36,7 +36,7 @@ public class WidgetsPageTest extends TestBase{
 		widpg = altpg.clickOnWidgetsTab();
 	}
 
-
+	//Accordian
 	@Test(priority = 1)
 	public void verifyWidgetsAccordianTab() {
 		try {
@@ -55,6 +55,7 @@ public class WidgetsPageTest extends TestBase{
 		}
 	}
 
+	//Auto Complete
 	@Test(priority = 2)
 	public void verifyAutoCompleteTab() {
 		try {
@@ -63,13 +64,12 @@ public class WidgetsPageTest extends TestBase{
 			Assert.assertEquals(widpg.verifyOnAutoCompleteTextOnPage(), "Auto Complete");
 			widpg.enterMultipleColors("Red");
 			widpg.enterSingleColorName("White");
-
-
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}
 	}
 
+	//Slider
 	@Test(priority = 3)
 	public void verifySliderTab() {
 		try {
@@ -85,6 +85,7 @@ public class WidgetsPageTest extends TestBase{
 		}
 	}
 
+	//Progress Bar
 	@Test(priority = 4)
 	public void verifyProgressBar() {
 		try {
@@ -103,7 +104,7 @@ public class WidgetsPageTest extends TestBase{
 		}
 	}
 
-
+	//Tabs
 	@Test(priority = 5)
 	public void verifyTabs() {
 		try {
@@ -122,7 +123,7 @@ public class WidgetsPageTest extends TestBase{
 		}
 	}
 
-
+	//Tooltip
 	@Test(priority = 6)
 	public void verifyToolTips() {
 		try {
@@ -141,7 +142,7 @@ public class WidgetsPageTest extends TestBase{
 		}
 	}
 
-	//Getting timeout exception
+	//Menu
 	@Test(priority = 7)
 	public void verifyMenu() {
 		try {
@@ -158,6 +159,25 @@ public class WidgetsPageTest extends TestBase{
 			Assert.assertEquals(widpg.verifyMainItem3(), "Main Item 3");
 
 		}catch (Exception e) {
+			System.out.println("Element not found within timeout: " + e.getMessage());
+		}
+	}
+
+	//Select Menu
+	@Test(priority = 8)
+	public void verifiedSelectMenu() {
+		try {
+			Assert.assertEquals(widpg.verifySelectMenuTextOnSideBar(), "Select Menu");
+			widpg.clickOnSelectMenuTab();
+			Assert.assertEquals(widpg.verifySelectMenuOnPage(), "Select Menu");
+			widpg.selectDataInSelectDrpDwn();
+			Assert.assertEquals(widpg.verifySelectedDataInSelectDrpDwn(), "A root option");
+			widpg.selectDataInSelectOneDrpDwn();
+			Assert.assertEquals(widpg.verifySelectdataInSelectOneDrpDwn(), "Prof.");
+			widpg.selectDataInColorDrpDwn();
+			widpg.selectMultipleDataInDrpDwn();
+		}catch(Exception e)
+		{
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}
 	}

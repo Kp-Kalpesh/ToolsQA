@@ -7,7 +7,11 @@
         <methods>
           <include name="tearDown"/>
           <include name="setup"/>
+          <include name="verifiedSelectMenu"/>
+          <include name="verifyTabs"/>
           <include name="verifyMenu"/>
+          <include name="verifyProgressBar"/>
+          <include name="verifyToolTips"/>
         </methods>
       </class> <!-- com.crm.qa.testCases.WidgetsPageTest -->
     </classes>

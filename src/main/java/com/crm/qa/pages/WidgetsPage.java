@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 import com.crm.qa.base.TestBase;
@@ -115,8 +116,23 @@ public class WidgetsPage extends TestBase{
 	//Select menu
 	@FindBy(xpath = "(//li[@id='item-8'])[2]")
 	WebElement selectMenuTextOnMenuBar;
-	
-	
+	@FindBy(xpath = "//h1[text()='Select Menu']")
+	WebElement selectMenuOnPage;
+	@FindBy(xpath = "//div[text()='Select Option']")
+	WebElement selectValueDrpDwn;	
+	@FindBy(xpath = "//div[text()='A root option']")
+	WebElement selectedValue;
+	@FindBy(xpath = "//div[text()='Select Title']")
+	WebElement selectOneDrpDwn;
+	@FindBy(xpath = "//div[text()='Prof.']")
+	WebElement selectedSelectoneValue;
+	@FindBy(xpath = "//select[@id='oldSelectMenu']")
+	WebElement selectColorDrpDwn;
+	@FindBy(xpath = "//div[text()='Select...']")
+	WebElement multiselectDrpDwn;
+
+
+
 	//Constructor
 	public WidgetsPage() {
 		PageFactory.initElements(driver, this);
@@ -325,7 +341,8 @@ public class WidgetsPage extends TestBase{
 		return toolTiptxtOnPage.getText();
 	}
 
-	public void hoverMouseOnBtn() {
+	public void hoverMouseOnBtn() throws InterruptedException {
+		Thread.sleep(1000);
 		act.click(hoverMeToSeeBtn).perform();
 	}
 
@@ -398,4 +415,51 @@ public class WidgetsPage extends TestBase{
 		Thread.sleep(2000);
 		return mainItem_3.getText();
 	}
+
+	//Select Menu
+	public String verifySelectMenuTextOnSideBar() throws InterruptedException {
+		Thread.sleep(2000);
+		act.sendKeys(selectMenuTextOnMenuBar, Keys.PAGE_DOWN).perform();
+		return selectMenuTextOnMenuBar.getText();
+	}
+
+	public void clickOnSelectMenuTab() throws InterruptedException {
+		Thread.sleep(2000);
+		selectMenuTextOnMenuBar.click();
+	}
+
+	public String verifySelectMenuOnPage() {
+		return selectMenuOnPage.getText();
+	}
+
+	public void selectDataInSelectDrpDwn() throws InterruptedException {
+		Thread.sleep(1000);
+		act.sendKeys(selectValueDrpDwn, "A root option", Keys.ENTER).build().perform();
+	}
+
+	public String verifySelectedDataInSelectDrpDwn() {
+		return selectedValue.getText(); 
+	}
+
+	public void selectDataInSelectOneDrpDwn() {
+		act.sendKeys(selectOneDrpDwn, "Prof.", Keys.ENTER).build().perform();
+	}
+
+	public String verifySelectdataInSelectOneDrpDwn() {
+		return selectedSelectoneValue.getText();
+	}
+
+	public void selectDataInColorDrpDwn() {
+		Select se = new Select(selectColorDrpDwn);
+		se.selectByValue("2");
+	}
+
+	public void selectMultipleDataInDrpDwn() throws InterruptedException {
+		act.sendKeys(multiselectDrpDwn, Keys.PAGE_DOWN).perform();
+		Thread.sleep(500);
+		act.sendKeys(multiselectDrpDwn, "Green", Keys.ENTER).build().perform();
+		act.sendKeys(multiselectDrpDwn, "Black", Keys.ENTER).build().perform();
+		act.sendKeys(multiselectDrpDwn, "Red", Keys.ENTER).build().perform();
+	}
 }
+
