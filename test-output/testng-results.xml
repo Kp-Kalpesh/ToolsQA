@@ -2,20 +2,20 @@
 <testng-results ignored="6" total="7" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-24T12:47:17 IST" name="Default suite" finished-at="2025-09-24T12:47:43 IST" duration-ms="26049">
+  <suite started-at="2025-09-24T14:49:35 IST" name="Default suite" finished-at="2025-09-24T14:50:03 IST" duration-ms="28242">
     <groups>
     </groups>
-    <test started-at="2025-09-24T12:47:17 IST" name="Default test" finished-at="2025-09-24T12:47:43 IST" duration-ms="26049">
+    <test started-at="2025-09-24T14:49:35 IST" name="Default test" finished-at="2025-09-24T14:50:03 IST" duration-ms="28242">
       <class name="com.crm.qa.testCases.WidgetsPageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.crm.qa.testCases.WidgetsPageTest@3e8c3cb]" started-at="2025-09-24T12:47:17 IST" name="setup" finished-at="2025-09-24T12:47:24 IST" duration-ms="7239" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.crm.qa.testCases.WidgetsPageTest@3e8c3cb]" started-at="2025-09-24T14:49:35 IST" name="setup" finished-at="2025-09-24T14:49:44 IST" duration-ms="9404" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyMenu()[pri:7, instance:com.crm.qa.testCases.WidgetsPageTest@3e8c3cb]" started-at="2025-09-24T12:47:24 IST" name="verifyMenu" finished-at="2025-09-24T12:47:43 IST" duration-ms="18653" status="PASS">
+        <test-method signature="verifyMenu()[pri:7, instance:com.crm.qa.testCases.WidgetsPageTest@3e8c3cb]" started-at="2025-09-24T14:49:44 IST" name="verifyMenu" finished-at="2025-09-24T14:50:03 IST" duration-ms="18685" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyMenu -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.qa.testCases.WidgetsPageTest@3e8c3cb]" started-at="2025-09-24T12:47:43 IST" name="tearDown" finished-at="2025-09-24T12:47:43 IST" duration-ms="132" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.qa.testCases.WidgetsPageTest@3e8c3cb]" started-at="2025-09-24T14:50:03 IST" name="tearDown" finished-at="2025-09-24T14:50:03 IST" duration-ms="125" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
