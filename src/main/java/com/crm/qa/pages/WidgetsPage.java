@@ -132,6 +132,9 @@ public class WidgetsPage extends TestBase{
 	WebElement multiselectDrpDwn;
 
 
+//Interaction Tab
+	@FindBy(xpath = "//div[text()='Interactions']")
+	WebElement interactionTextOnMenuBar;
 
 	//Constructor
 	public WidgetsPage() {
@@ -460,6 +463,11 @@ public class WidgetsPage extends TestBase{
 		act.sendKeys(multiselectDrpDwn, "Green", Keys.ENTER).build().perform();
 		act.sendKeys(multiselectDrpDwn, "Black", Keys.ENTER).build().perform();
 		act.sendKeys(multiselectDrpDwn, "Red", Keys.ENTER).build().perform();
+	}
+	
+	public InteractionPage clickOnInteractionTab() {
+		interactionTextOnMenuBar.click();
+		return new InteractionPage();
 	}
 }
 
