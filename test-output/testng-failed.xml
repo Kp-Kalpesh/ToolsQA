@@ -3,17 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.crm.qa.testCases.WidgetsPageTest">
+      <class name="com.crm.qa.testCases.InteractionPageTest">
         <methods>
-          <include name="tearDown"/>
           <include name="setup"/>
-          <include name="verifiedSelectMenu"/>
-          <include name="verifyTabs"/>
-          <include name="verifyMenu"/>
-          <include name="verifyProgressBar"/>
-          <include name="verifyToolTips"/>
+          <include name="tearDown"/>
+          <include name="verifyInteractionText"/>
         </methods>
-      </class> <!-- com.crm.qa.testCases.WidgetsPageTest -->
+      </class> <!-- com.crm.qa.testCases.InteractionPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

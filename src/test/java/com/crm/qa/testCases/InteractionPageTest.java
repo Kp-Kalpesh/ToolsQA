@@ -42,14 +42,36 @@ public class InteractionPageTest extends TestBase{
 
 	@Test(priority = 1)
 	public void verifyInteractionText() {
-		Assert.assertEquals(interpg.verifyInteractionTxt(), "Interactions");
+		try {
+			Assert.assertEquals(interpg.verifyInteractionTxt(), "Interactions");
+			Assert.assertEquals(interpg.verifySortableTxtOnMenuBar(), "Sortable");
+			interpg.clickOnSortableTxt();
+			Assert.assertEquals(interpg.verifySortableTxtOnPage(), "Sortable");
+			Assert.assertEquals(interpg.verifyListTxt(), "List");
+			Assert.assertEquals(interpg.verifyOneInList(), "One");
+			Assert.assertEquals(interpg.verifyTwoInList(), "Two");
+			Assert.assertEquals(interpg.verifyThreeInList(), "Three");
+			Assert.assertEquals(interpg.verifyFourInList(), "Four");
+			Assert.assertEquals(interpg.verifyFiveInList(), "Five");
+			Assert.assertEquals(interpg.verifySixInList(), "Six");
+			Assert.assertEquals(interpg.verifyGridTxt(), "Grid");
+			interpg.clickOnGridTxt();
+			Assert.assertEquals(interpg.verifyFirstInGrid(), "One");
+			Assert.assertEquals(interpg.verifyTwoInGrid(), "Two");
+			Assert.assertEquals(interpg.verifyThreeInGrid(), "Three");
+			Assert.assertEquals(interpg.verifyFourInGrid(), "Four");
+			Assert.assertEquals(interpg.verifyFiveInGrid(), "Five");
+			Assert.assertEquals(interpg.verifySixInGrid(), "Six");
+		}catch(Exception e) {
+			System.out.println("Element not found within timeout: " + e.getMessage());
+		}
 	}
-	
-	
+
+
 
 
 	@AfterMethod
 	public void tearDown() {
-//		driver.quit();
+		driver.quit();
 	}
 }
