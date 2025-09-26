@@ -67,11 +67,44 @@ public class InteractionPageTest extends TestBase{
 		}
 	}
 
+	//Selectable Tab
+	@Test
+	public void verifySelectableTab() {
+		try {
+			Assert.assertEquals(interpg.verifySelectableTxtOnMenuBar(), "Selectable");
+			interpg.clickOnSelectableTxtOnMenuBar();
+			Assert.assertEquals(interpg.verifySelectableTxtOnPage(), "Selectable");
+			Assert.assertEquals(interpg.verifyListTxtOnPage(), "List");
+
+			Assert.assertEquals(interpg.verifyAndClickOn1stTxtOnPage(), "Cras justo odio");
+			Assert.assertEquals(interpg.verifyAndClickOn2ndTxtOnPage(), "Dapibus ac facilisis in");
+			Assert.assertEquals(interpg.verifyAndClickOn3rdTxtOnPage(), "Morbi leo risus");
+			Assert.assertEquals(interpg.verifyAndClickOn4thTxtOnPage(), "Porta ac consectetur ac");
+			Assert.assertEquals(interpg.verifyGridTxtOnPage(), "Grid");
+			interpg.clickOnGridTxtOnPage();
+			Assert.assertEquals(interpg.verifyAndClick1stBoxTxtOnPage(), "One");
+			Assert.assertEquals(interpg.verifyAndClick2ndBoxTxtOnPage(), "Two");
+			Assert.assertEquals(interpg.verifyAndClick3rdBoxTxtOnPage(), "Three");
+			Assert.assertEquals(interpg.verifyAndClick4thBoxTxtOnPage(), "Four");
+			Assert.assertEquals(interpg.verifyAndClick5thBoxTxtOnPage(), "Five");
+			Assert.assertEquals(interpg.verifyAndClick6thBoxTxtOnPage(), "Six");
+			Assert.assertEquals(interpg.verifyAndClick7thBoxTxtOnPage(), "Seven");
+			Assert.assertEquals(interpg.verifyAndClick8thBoxTxtOnPage(), "Eight");
+			Assert.assertEquals(interpg.verifyAndClick9thBoxTxtOnPage(), "Nine");
+
+
+
+
+		}catch(Exception e) {
+			System.out.println("Element not found within timeout: " + e.getMessage());
+		}
+	}
+
 
 
 
 	@AfterMethod
 	public void tearDown() {
-		driver.quit();
+//		driver.quit();
 	}
 }

@@ -47,7 +47,43 @@ public class InteractionPage extends TestBase{
 	@FindBy(xpath = "(//div[text()='Six'])[2]")
 	WebElement verifySixGrid;	
 
-
+	//Selectable
+	@FindBy(xpath = "(//li[@id='item-1'])[4]")
+	WebElement SelectableTxtOnMenuBar;
+	@FindBy(xpath = "(//li[@id='item-1'])[4]")
+	WebElement clickOnSelectableTxtOnMenuBar;
+	@FindBy(xpath = "//h1[text()='Selectable']")
+	WebElement SelectableTxtOnPage;
+	@FindBy(xpath = "//a[text()='List']")
+	WebElement ListTxtOnPage;
+	@FindBy(xpath = "//li[text()='Cras justo odio']")
+	WebElement clickOnTxt_1inList;
+	@FindBy(xpath = "//li[text()='Dapibus ac facilisis in']")
+	WebElement clickOnTxt_2inList;
+	@FindBy(xpath = "//li[text()='Morbi leo risus']")
+	WebElement clickOnTxt_3inList;
+	@FindBy(xpath = "//li[text()='Porta ac consectetur ac']")
+	WebElement clickOnTxt_4inList;
+	@FindBy(xpath = "//a[text()='Grid']")
+	WebElement clickOnGridTxtOnPage;
+	@FindBy(xpath = "//li[text()='One']")
+	WebElement clickOnOneTxtInGrid;
+	@FindBy(xpath = "//li[text()='Two']")
+	WebElement clickOnTwoTxtInGrid;
+	@FindBy(xpath = "//li[text()='Three']")
+	WebElement clickOnThreeTxtInGrid;
+	@FindBy(xpath = "//li[text()='Four']")
+	WebElement clickOnFourTxtInGrid;
+	@FindBy(xpath = "//li[text()='Five']")
+	WebElement clickOnFiveTxtInGrid;
+	@FindBy(xpath = "//li[text()='Six']")
+	WebElement clickOnSixTxtInGrid;
+	@FindBy(xpath = "//li[text()='Seven']")
+	WebElement clickOnSevenTxtInGrid;
+	@FindBy(xpath = "//li[text()='Eight']")
+	WebElement clickOnEightTxtInGrid;
+	@FindBy(xpath = "//li[text()='Nine']")
+	WebElement clickOnNineTxtInGrid;
 
 
 	//Constructor
@@ -132,4 +168,98 @@ public class InteractionPage extends TestBase{
 		return verifySixGrid.getText();
 	}
 
+	//Selectable Actions methods
+	public String verifySelectableTxtOnMenuBar() throws InterruptedException {
+		Thread.sleep(2000);
+		return SelectableTxtOnMenuBar.getText();
+	}
+
+	public void clickOnSelectableTxtOnMenuBar() {
+		clickOnSelectableTxtOnMenuBar.click();
+	}
+
+	public String verifySelectableTxtOnPage() {
+		return SelectableTxtOnPage.getText();
+	}
+
+	public String verifyListTxtOnPage() {
+		return ListTxtOnPage.getText();
+	}
+
+	public String verifyAndClickOn1stTxtOnPage() throws InterruptedException {
+		Thread.sleep(1000);
+		clickOnTxt_1inList.click();
+		return clickOnTxt_1inList.getText();
+	}
+
+	public String verifyAndClickOn2ndTxtOnPage() throws InterruptedException {
+		Thread.sleep(1000);
+		clickOnTxt_2inList.click();
+		return clickOnTxt_2inList.getText();
+	}
+
+	public String verifyAndClickOn3rdTxtOnPage() throws InterruptedException {
+		Thread.sleep(1000);
+		clickOnTxt_3inList.click();
+		return clickOnTxt_3inList.getText();
+	}
+
+	public String verifyAndClickOn4thTxtOnPage() throws InterruptedException {
+		Thread.sleep(1000);
+		clickOnTxt_4inList.click();
+		return clickOnTxt_4inList.getText();
+	}
+
+	public String verifyGridTxtOnPage() {
+		return clickOnGridTxtOnPage.getText();
+	}
+
+	public void clickOnGridTxtOnPage() {
+		clickOnGridTxtOnPage.click();
+	}
+
+	public String verifyAndClick1stBoxTxtOnPage() {
+		clickOnOneTxtInGrid.click();
+		return clickOnOneTxtInGrid.getText();
+	}
+
+	public String verifyAndClick2ndBoxTxtOnPage() {
+		clickOnTwoTxtInGrid.click();
+		return clickOnTwoTxtInGrid.getText();
+	}
+
+	public String verifyAndClick3rdBoxTxtOnPage() {
+		clickOnThreeTxtInGrid.click();
+		return clickOnThreeTxtInGrid.getText();
+	}
+
+	public String verifyAndClick4thBoxTxtOnPage() {
+		clickOnFourTxtInGrid.click();
+		return clickOnFourTxtInGrid.getText();
+	}
+
+	public String verifyAndClick5thBoxTxtOnPage() {
+		clickOnFiveTxtInGrid.click();
+		return clickOnFiveTxtInGrid.getText();
+	}
+
+	public String verifyAndClick6thBoxTxtOnPage() {
+		clickOnSixTxtInGrid.click();
+		return clickOnSixTxtInGrid.getText();
+	}
+
+	public String verifyAndClick7thBoxTxtOnPage() {
+		clickOnSevenTxtInGrid.click();
+		return clickOnSevenTxtInGrid.getText();
+	}
+
+	public String verifyAndClick8thBoxTxtOnPage() {
+		clickOnEightTxtInGrid.click();
+		return clickOnEightTxtInGrid.getText();
+	}
+
+	public String verifyAndClick9thBoxTxtOnPage() {
+		clickOnNineTxtInGrid.click();
+		return clickOnNineTxtInGrid.getText();
+	}
 }

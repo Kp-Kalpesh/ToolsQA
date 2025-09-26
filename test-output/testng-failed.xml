@@ -7,7 +7,7 @@
         <methods>
           <include name="setup"/>
           <include name="tearDown"/>
-          <include name="verifyInteractionText"/>
+          <include name="verifySelectableTab"/>
         </methods>
       </class> <!-- com.crm.qa.testCases.InteractionPageTest -->
     </classes>
