@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import com.crm.qa.base.TestBase;
 
 public class InteractionPage extends TestBase{
-	
+
 	Actions act;
 
 	@FindBy(xpath = "//div[text()='Interactions']")
@@ -88,6 +88,16 @@ public class InteractionPage extends TestBase{
 	WebElement clickOnEightTxtInGrid;
 	@FindBy(xpath = "//li[text()='Nine']")
 	WebElement clickOnNineTxtInGrid;
+
+	//Resizable
+	@FindBy(xpath = "(//li[@id='item-2'])[4]")
+	WebElement resizableTxtOnMenuBar;
+	@FindBy(xpath = "//h1[text()='Resizable']")
+	WebElement resizableTxtOnPage;
+	@FindBy(xpath = "(//div[@class='text'])[1]")
+	WebElement boxSizeRatio;
+	@FindBy(xpath = "(//span[contains(@class,'react-resizabl')])[1]")
+	WebElement cursor_1;
 
 
 	//Constructor
@@ -271,5 +281,29 @@ public class InteractionPage extends TestBase{
 	public String verifyAndClick9thBoxTxtOnPage() {
 		clickOnNineTxtInGrid.click();
 		return clickOnNineTxtInGrid.getText();
+	}
+	
+	//Resizable
+	public String verifyResizableTxtOnMenu() throws InterruptedException {
+		Thread.sleep(2000);
+		return resizableTxtOnMenuBar.getText();
+	}
+	
+	public void clickOnResizableTxtOnMenuBar() {
+		resizableTxtOnMenuBar.click();
+	}
+	
+	public String verifyResizableTxtOnPage() {
+		return resizableTxtOnPage.getText();
+	}
+	
+	public String verifyMessageOfRisizableBox() {
+		return boxSizeRatio.getText();
+	}
+	
+	public void expandBoxSize() throws InterruptedException {
+		Thread.sleep(3000);
+		act.clickAndHold(cursor_1).moveByOffset(300, 250).release().build().perform();
+//		act.dragAndDropBy(cursor_1, 300, 200).release().build().perform();
 	}
 }

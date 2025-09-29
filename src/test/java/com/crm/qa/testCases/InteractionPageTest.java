@@ -96,11 +96,28 @@ public class InteractionPageTest extends TestBase{
 		}
 	}
 
+	//Pending
+
+	//	@Test(priority = 3)
+	//	public void verifyResizableTab() throws InterruptedException {
+	//		try {
+	//			Assert.assertEquals(interpg.verifyResizableTxtOnMenu(), "Resizable");
+	//			interpg.clickOnResizableTxtOnMenuBar();
+	//			Assert.assertEquals(interpg.verifyResizableTxtOnPage(), "Resizable");
+	//			Assert.assertEquals(interpg.verifyMessageOfRisizableBox(), "Resizable box, starting at 200x200. Min size is 150x150, max is 500x300.");
+	//			interpg.expandBoxSize();
+	//
+	//
+	//
+	//		}catch(Exception e) {
+	//			System.out.println("Element not found within timeout: " + e.getMessage());
+	//		}
+	//	}
 
 
 
 	@AfterMethod
 	public void tearDown() {
-		driver.quit();
+		//		driver.quit();
 	}
 }
