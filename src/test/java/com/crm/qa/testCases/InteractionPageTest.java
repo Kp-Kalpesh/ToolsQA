@@ -118,6 +118,10 @@ public class InteractionPageTest extends TestBase{
 			Assert.assertEquals(interpg.verifyDropableTxtOnMenuBar(), "Droppable");
 			interpg.clickOnDroppableTxtOnMenuBar();
 			Assert.assertEquals(interpg.verifyDroppabletxtOnPage(), "Droppable");
+			Assert.assertEquals(interpg.verifySimpleTxtOnPage(), "Simple");
+			interpg.verifyDragAndDrop();
+			
+			
 		}catch(Exception e) {
 
 		}

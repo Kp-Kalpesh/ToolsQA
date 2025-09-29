@@ -104,6 +104,23 @@ public class InteractionPage extends TestBase{
 	WebElement dropableTxtOnMenuBar;
 	@FindBy(xpath = "//h1[text()='Droppable']")
 	WebElement dropableTxtOnPage;
+	@FindBy(xpath = "//a[text()='Simple']")
+	WebElement simpleTxtOnPage;
+	@FindBy(xpath = "//div[text()='Drag me']")
+	WebElement dragMeBx;
+	@FindBy(xpath = "(//div[@id='droppable'])[1]")
+	WebElement dropherebx;
+//	@FindBy(xpath = "")
+//	WebElement simpleTxtOnPage;
+//	@FindBy(xpath = "")
+//	WebElement simpleTxtOnPage;
+//	@FindBy(xpath = "")
+//	WebElement simpleTxtOnPage;
+//	@FindBy(xpath = "")
+//	WebElement simpleTxtOnPage;
+//	@FindBy(xpath = "")
+//	WebElement simpleTxtOnPage;
+	
 	
 	
 
@@ -332,5 +349,14 @@ public class InteractionPage extends TestBase{
 	
 	public String verifyDroppabletxtOnPage() {
 		return dropableTxtOnPage.getText();
+	}
+	
+	public String verifySimpleTxtOnPage() {
+		return simpleTxtOnPage.getText();
+	}
+	
+	public void verifyDragAndDrop() throws InterruptedException {
+		Thread.sleep(2000);
+		act.dragAndDrop(dragMeBx,dropherebx).perform();
 	}
 }
