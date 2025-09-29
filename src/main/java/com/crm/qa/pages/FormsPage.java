@@ -13,7 +13,7 @@ import com.crm.qa.base.TestBase;
 public class FormsPage extends TestBase{
 	//	private TestUtil tstU;
 	private Actions act;
-//	private Select se;
+	//	private Select se;
 	JavascriptExecutor js;
 
 
@@ -130,8 +130,8 @@ public class FormsPage extends TestBase{
 		hobbiesChkBx.click();
 	}
 
-	public void selectPicture() {
-		uploadPic.sendKeys("D:\\GIFs\\72103ed7e6d5717d485ad1a7add690c6.jpg");
+	public void selectPicture(String selPicUrl) {
+		uploadPic.sendKeys(selPicUrl);
 	}
 
 	public void enterCurrentAddress(String cAddress) {

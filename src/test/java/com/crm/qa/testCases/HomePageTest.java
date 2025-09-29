@@ -29,7 +29,7 @@ public class HomePageTest extends TestBase{
 	@Test(priority = 1)
 	public void HomePageTitleTest() {
 		String actTitle = homepg.validateHomePageTitle();
-		Assert.assertEquals(actTitle, "DEMOQA");
+		Assert.assertEquals(actTitle, prop.getProperty("HomeActualTitle"));
 	}
 
 	@Test(priority = 2)

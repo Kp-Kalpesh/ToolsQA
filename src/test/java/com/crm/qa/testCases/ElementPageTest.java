@@ -31,7 +31,7 @@ public class ElementPageTest extends TestBase{
 	public void verifyElementsTextTest() {
 
 		String actEleText = elepg.elementsText();
-		Assert.assertEquals(actEleText, "Elements");
+		Assert.assertEquals(actEleText, prop.getProperty("actText"));
 	}
 
 	//TextBox
@@ -45,16 +45,16 @@ public class ElementPageTest extends TestBase{
 			elepg.enterPeramanentAddress(prop.getProperty("PermanentAddress"));
 			elepg.clickOnSubmitBtn();
 			String actName = elepg.verifyFullName();
-			Assert.assertEquals(actName, "Name:Robert John Desouza");
+			Assert.assertEquals(actName, prop.getProperty("actFullName"));
 
 			String actEmail = elepg.verifyUserEmail();
-			Assert.assertEquals(actEmail, "Email:robert.d@gmail.com");
+			Assert.assertEquals(actEmail, prop.getProperty("actEmail"));
 
 			String actCAddress = elepg.verifyCurrentAddress();
-			Assert.assertEquals(actCAddress, "Current Address :Suite 677 30575 Winfred Highway, Venusfort, KS 24304");
+			Assert.assertEquals(actCAddress, prop.getProperty("actCurrentAddress"));
 
 			String actPAddress = elepg.verifyPeramanentAddress();
-			Assert.assertEquals(actPAddress, "Permananet Address :Suite 840 1045 Johnson Radial, Lake Renaldofurt, ND 60105-0717");
+			Assert.assertEquals(actPAddress, prop.getProperty("actPermanentAddress"));
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
 			Assert.fail("Test failed due to TimeoutException.");
@@ -67,12 +67,12 @@ public class ElementPageTest extends TestBase{
 	public void verifyClickOnCheckBox() {
 		try {
 			String actCheckBxTxt = elepg.verifyCheckBoxText();
-			Assert.assertEquals(actCheckBxTxt, "Check Box");
+			Assert.assertEquals(actCheckBxTxt, prop.getProperty("chkbx"));
 
 			elepg.clickOnTextBoxText();
 			elepg.clickOnCheckBox();
 			String actCheckbxResult = elepg.verifyCheckboxResultText();
-			Assert.assertEquals(actCheckbxResult, "You have selected :");
+			Assert.assertEquals(actCheckbxResult, prop.getProperty("selectedMessage"));
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
 			Assert.fail("Test failed due to TimeoutException.");
@@ -84,16 +84,16 @@ public class ElementPageTest extends TestBase{
 	public void chekRadioButtons() {
 		try {
 			String actText = elepg.verifyRadioBtnText();
-			Assert.assertEquals(actText, "Radio Button");
+			Assert.assertEquals(actText, prop.getProperty("RButton"));
 
 			elepg.clickOnRadioBtnText();
 			elepg.clickOnYes();
 			String actYesText = elepg.verifyYesText();
-			Assert.assertEquals(actYesText, "You have selected Yes");
+			Assert.assertEquals(actYesText, prop.getProperty("yesText"));
 
 			elepg.clickOnImpressive();
 			String actImpText = elepg.verifyImpressiveText();
-			Assert.assertEquals(actImpText, "You have selected Impressive");		
+			Assert.assertEquals(actImpText, prop.getProperty("impressText"));		
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
 			Assert.fail("Test failed due to TimeoutException.");
@@ -106,7 +106,7 @@ public class ElementPageTest extends TestBase{
 
 		try {
 			String actWebtableText = elepg.verifyWebTablesText();
-			Assert.assertEquals(actWebtableText, "Web Tables");
+			Assert.assertEquals(actWebtableText, prop.getProperty("actTableName"));
 
 			elepg.clickOnwebtable();
 			elepg.clickOnAddBtn();
@@ -181,70 +181,71 @@ public class ElementPageTest extends TestBase{
 	public void validateButtonTextOnMenu() {
 		try {
 			String actBtnText = elepg.verifyButtonText();
-			Assert.assertEquals(actBtnText, "Buttons");
+			Assert.assertEquals(actBtnText, prop.getProperty("actBText"));
 
 			elepg.clickOnButtonText();
 			elepg.doubleClickMe();
 			String actDoubleClickMessage = elepg.doubleClickMessage();
-			Assert.assertEquals(actDoubleClickMessage, "You have done a double click");
+			Assert.assertEquals(actDoubleClickMessage, prop.getProperty("doubleClickText"));
 
 			elepg.rightClickBtn();
 			String actRightClickMessage = elepg.verifyRightClickMessage();
-			Assert.assertEquals(actRightClickMessage, "You have done a right click");
+			Assert.assertEquals(actRightClickMessage, prop.getProperty("rightClickText"));
 
 			elepg.singleClickBtn();
 			String actSingleClickMesage = elepg.singleClickMessage();
-			Assert.assertEquals(actSingleClickMesage, "You have done a dynamic click");
+			Assert.assertEquals(actSingleClickMesage, prop.getProperty("dynamicClickText"));
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}	
 	}
 
+	//Links
 	@Test(priority = 7)
 	public void verifiedWindowAndAllLinks() {
 		try {
 			String actLinkText = elepg.verifyLinksTextInMenu();
-			Assert.assertEquals(actLinkText, "Links");
+			Assert.assertEquals(actLinkText, prop.getProperty("actLinkTxt"));
 
 			elepg.clickOnLinks();
 			String actHomeText = elepg.verifyHomeText();
-			Assert.assertEquals(actHomeText, "Home");
+			Assert.assertEquals(actHomeText, prop.getProperty("acthomeTxt"));
 
 			elepg.clickOnHomeLink();
 			elepg.clickOnCreatedLink();
-			Assert.assertEquals(elepg.verifyCreatedLinkResonse(), "Link has responded with staus 201 and status text Created");
+			Assert.assertEquals(elepg.verifyCreatedLinkResonse(), prop.getProperty("CreatedLink"));
 			elepg.clickOnNoContentLink();
-			Assert.assertEquals(elepg.verifyNoContentLinkResonse(), "Link has responded with staus 204 and status text No Content");
+			Assert.assertEquals(elepg.verifyNoContentLinkResonse(), prop.getProperty("NoContentLink"));
 			elepg.clickOnMovedLink();
-			Assert.assertEquals(elepg.verifyMovedLinkResonse(), "Link has responded with staus 301 and status text Moved Permanently");
+			Assert.assertEquals(elepg.verifyMovedLinkResonse(), prop.getProperty("MovedLink"));
 			elepg.clickOnBadRequestLink();
-			Assert.assertEquals(elepg.verifyBadRequestLinkResonse(), "Link has responded with staus 400 and status text Bad Request");
+			Assert.assertEquals(elepg.verifyBadRequestLinkResonse(), prop.getProperty("BadRequestLink"));
 			elepg.clickOnUnAuthorizedLink();
-			Assert.assertEquals(elepg.verifyUnAuthorizedLinkResonse(), "Link has responded with staus 401 and status text Unauthorized");
+			Assert.assertEquals(elepg.verifyUnAuthorizedLinkResonse(), prop.getProperty("UnAuthorizedLink"));
 			elepg.clickOnForbiddenLink();
-			Assert.assertEquals(elepg.verifyForbiddenLinkResonse(), "Link has responded with staus 403 and status text Forbidden");
+			Assert.assertEquals(elepg.verifyForbiddenLinkResonse(), prop.getProperty("ForbiddenLink"));
 			elepg.clickOnNotFoundLink();
-			Assert.assertEquals(elepg.verifyNotFoundLinkResonse(), "Link has responded with staus 404 and status text Not Found");
+			Assert.assertEquals(elepg.verifyNotFoundLinkResonse(), prop.getProperty("NotFoundLink"));
 
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}
 	}
 
+	//BrokenLinks
 	@Test(priority = 8)
 	public void verifyBrokenLinks() {
 		try {
-			Assert.assertEquals(elepg.verifyBrokenLinkOnMenuText(), "Broken Links - Images");
+			Assert.assertEquals(elepg.verifyBrokenLinkOnMenuText(), prop.getProperty("bLink"));
 			elepg.verifyClickOnBrokenLinks();
 			boolean flag = elepg.displayedToolsQALogo();
 			Assert.assertTrue(flag);
 			elepg.clickOnValidLinkText();
 			elepg.clickBrokenLinkText();
-			Assert.assertEquals(elepg.getStatusCode(), "Status Codes");
+			Assert.assertEquals(elepg.getStatusCode(), prop.getProperty("sCodes"));
 
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
-
 		}
 	}
 

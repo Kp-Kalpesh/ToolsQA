@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.crm.qa.testCases.InteractionPageTest">
+      <class name="com.crm.qa.testCases.FormsPageTest">
         <methods>
-          <include name="setup"/>
+          <include name="verifySubmitForm"/>
           <include name="tearDown"/>
-          <include name="verifyInteractionText"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- com.crm.qa.testCases.InteractionPageTest -->
+      </class> <!-- com.crm.qa.testCases.FormsPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

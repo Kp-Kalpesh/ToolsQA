@@ -40,14 +40,14 @@ public class WidgetsPageTest extends TestBase{
 	@Test(priority = 1)
 	public void verifyWidgetsAccordianTab() {
 		try {
-			Assert.assertEquals(widpg.verifyWidgetTextOnMenuBar(), "Widgets");
-			Assert.assertEquals(widpg.verifyAccordianTextOnMenuBar(), "Accordian");
+			Assert.assertEquals(widpg.verifyWidgetTextOnMenuBar(), prop.getProperty("actTxt"));
+			Assert.assertEquals(widpg.verifyAccordianTextOnMenuBar(), prop.getProperty("actAccoTxt"));
 			widpg.clickAccordianTextOnMenuBar();
-			Assert.assertEquals(widpg.verifyaccordianTextOnPage(), "Accordian");
-			Assert.assertEquals(widpg.verifyBoxOneText(), "What is Lorem Ipsum?");
-			Assert.assertEquals(widpg.veifyBox2Text(), "Where does it come from?");
+			Assert.assertEquals(widpg.verifyaccordianTextOnPage(), prop.getProperty("actAccoTxt"));
+			Assert.assertEquals(widpg.verifyBoxOneText(), prop.getProperty("boxOneTxt"));
+			Assert.assertEquals(widpg.veifyBox2Text(), prop.getProperty("boxTwotxt"));
 			widpg.clickOnBox2Text();
-			Assert.assertEquals(widpg.verifybox3Text(), "Why do we use it?");
+			Assert.assertEquals(widpg.verifybox3Text(), prop.getProperty("boxThreeTxt"));
 			widpg.clickOnBox3Text();
 
 		}catch (Exception e) {
@@ -59,11 +59,11 @@ public class WidgetsPageTest extends TestBase{
 	@Test(priority = 2)
 	public void verifyAutoCompleteTab() {
 		try {
-			Assert.assertEquals(widpg.verifyAutoCompleteTextOnMenuBar(), "Auto Complete");
+			Assert.assertEquals(widpg.verifyAutoCompleteTextOnMenuBar(), prop.getProperty("acTxt"));
 			widpg.clickOnAutoCompleteTab();
-			Assert.assertEquals(widpg.verifyOnAutoCompleteTextOnPage(), "Auto Complete");
-			widpg.enterMultipleColors("Red");
-			widpg.enterSingleColorName("White");
+			Assert.assertEquals(widpg.verifyOnAutoCompleteTextOnPage(), prop.getProperty("acTxt"));
+			widpg.enterMultipleColors(prop.getProperty("multiColor"));
+			widpg.enterSingleColorName(prop.getProperty("singleColor"));
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}
@@ -74,11 +74,11 @@ public class WidgetsPageTest extends TestBase{
 	public void verifySliderTab() {
 		try {
 
-			Assert.assertEquals(widpg.verifySliderTextOnMenuBar(), "Slider");
+			Assert.assertEquals(widpg.verifySliderTextOnMenuBar(), prop.getProperty("sliderTxt"));
 			widpg.clickOnsliderTab();
-			Assert.assertEquals(widpg.verifySliderTextOnPage(), "Slider");
+			Assert.assertEquals(widpg.verifySliderTextOnPage(), prop.getProperty("sliderTxt"));
 			widpg.slideTheHorizontalScroll();
-			Assert.assertEquals(widpg.verifyResultValue(), "58");
+			Assert.assertEquals(widpg.verifyResultValue(), prop.getProperty("resultValue"));
 
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
@@ -89,15 +89,15 @@ public class WidgetsPageTest extends TestBase{
 	@Test(priority = 4)
 	public void verifyProgressBar() {
 		try {
-			Assert.assertEquals(widpg.verifyProgressBarTextOnMenuBar(), "Progress Bar");	
+			Assert.assertEquals(widpg.verifyProgressBarTextOnMenuBar(), prop.getProperty("pbText"));	
 			widpg.clickOnProgressBartextonMenu();
-			Assert.assertEquals(widpg.verifyProgressBarTextOnPage(), "Progress Bar");
+			Assert.assertEquals(widpg.verifyProgressBarTextOnPage(), prop.getProperty("pbText"));
 			widpg.clickOnStartBtn();
 			widpg.clickOnStopBtn();
-			Assert.assertEquals(widpg.verifyRunningProgressBar(), "50%");
+			Assert.assertEquals(widpg.verifyRunningProgressBar(), prop.getProperty("runningPB"));
 			System.out.println("verifyRunningProgressBar: " + widpg.verifyRunningProgressBar());
 			widpg.clickOnAgainStartBtn();
-			Assert.assertEquals(widpg.verifyCompletedProgressBarTxt(), "100%");
+			Assert.assertEquals(widpg.verifyCompletedProgressBarTxt(), prop.getProperty("completedPB"));
 			widpg.clickOnResetBtn();
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
@@ -108,15 +108,15 @@ public class WidgetsPageTest extends TestBase{
 	@Test(priority = 5)
 	public void verifyTabs() {
 		try {
-			Assert.assertEquals(widpg.verifyTabsTxtOnMenuBar(), "Tabs");
+			Assert.assertEquals(widpg.verifyTabsTxtOnMenuBar(), prop.getProperty("actTbtxt"));
 			widpg.clickOnTabsTxtOnMenuBar();
-			Assert.assertEquals(widpg.verifyTabsTxtOnPage(), "Tabs");
-			Assert.assertEquals(widpg.verifyWhatTxt(), "What");
-			Assert.assertEquals(widpg.verifyOriginTxt(), "Origin");
+			Assert.assertEquals(widpg.verifyTabsTxtOnPage(), prop.getProperty("actTbtxt"));
+			Assert.assertEquals(widpg.verifyWhatTxt(), prop.getProperty("wTxt"));
+			Assert.assertEquals(widpg.verifyOriginTxt(), prop.getProperty("oTxt"));
 			widpg.clickOnOrigin();
-			Assert.assertEquals(widpg.verifyUseTxt(), "Use");
+			Assert.assertEquals(widpg.verifyUseTxt(), prop.getProperty("uTxt"));
 			widpg.clickOnUse();
-			Assert.assertEquals(widpg.verifyMoreText(), "More");
+			Assert.assertEquals(widpg.verifyMoreText(), prop.getProperty("mTxt"));
 
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
@@ -127,15 +127,15 @@ public class WidgetsPageTest extends TestBase{
 	@Test(priority = 6)
 	public void verifyToolTips() {
 		try {
-			Assert.assertEquals(widpg.verifyToolTiptextOnMenu(), "Tool Tips");
+			Assert.assertEquals(widpg.verifyToolTiptextOnMenu(), prop.getProperty("ttTxt"));
 			widpg.clickOnToolTipTxt();
-			Assert.assertEquals(widpg.verifyTooltipTxtOnPage(), "Tool Tips");
+			Assert.assertEquals(widpg.verifyTooltipTxtOnPage(), prop.getProperty("ttTxt"));
 			widpg.hoverMouseOnBtn();
 			System.out.println("verifyBtnHoverText: " + widpg.verifyBtnHoverText());
-			Assert.assertEquals(widpg.verifyBtnHoverText(), "You hovered over the Button");
+			Assert.assertEquals(widpg.verifyBtnHoverText(), prop.getProperty("ttMessage_1"));
 			widpg.hoverMouseOnInputField();
 			System.out.println("verifyInputFieldTooltiptxt:" + widpg.verifyInputFieldTooltiptxt());
-			Assert.assertEquals(widpg.verifyInputFieldTooltiptxt(), "You hovered over the text field");
+			Assert.assertEquals(widpg.verifyInputFieldTooltiptxt(), prop.getProperty("ttMessage_2"));
 
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
@@ -146,17 +146,17 @@ public class WidgetsPageTest extends TestBase{
 	@Test(priority = 7)
 	public void verifyMenu() {
 		try {
-			Assert.assertEquals(widpg.verifyMenuTxtOnMenuBar(), "Menu");
+			Assert.assertEquals(widpg.verifyMenuTxtOnMenuBar(), prop.getProperty("actmenutxt"));
 			widpg.clickOnMenuTxtOnMenuBar();
-			Assert.assertEquals(widpg.verifyMenuTxtOnPage(), "Menu");
-			Assert.assertEquals(widpg.verifyMainItem1(), "Main Item 1");
-			Assert.assertEquals(widpg.verifyMainItem2(), "Main Item 2");
-			Assert.assertEquals(widpg.verifySubItem1(), "Sub Item");
-			Assert.assertEquals(widpg.verifySubItem2(), "Sub Item");
-			Assert.assertEquals(widpg.verifySubList(), "SUB SUB LIST »");
-			Assert.assertEquals(widpg.verifySubListitem1(), "Sub Sub Item 1");
-			Assert.assertEquals(widpg.verifySubListItem2(), "Sub Sub Item 2");
-			Assert.assertEquals(widpg.verifyMainItem3(), "Main Item 3");
+			Assert.assertEquals(widpg.verifyMenuTxtOnPage(), prop.getProperty("actmenutxt"));
+			Assert.assertEquals(widpg.verifyMainItem1(), prop.getProperty("MI_1"));
+			Assert.assertEquals(widpg.verifyMainItem2(), prop.getProperty("MI_2"));
+			Assert.assertEquals(widpg.verifySubItem1(), prop.getProperty("SI"));
+			Assert.assertEquals(widpg.verifySubItem2(), prop.getProperty("SI"));
+			Assert.assertEquals(widpg.verifySubList(), prop.getProperty("SSL"));
+			Assert.assertEquals(widpg.verifySubListitem1(), prop.getProperty("SSI_1"));
+			Assert.assertEquals(widpg.verifySubListItem2(), prop.getProperty("SSI_2"));
+			Assert.assertEquals(widpg.verifyMainItem3(), prop.getProperty("MI_3"));
 
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
@@ -167,15 +167,15 @@ public class WidgetsPageTest extends TestBase{
 	@Test(priority = 8)
 	public void verifiedSelectMenu() {
 		try {
-			Assert.assertEquals(widpg.verifySelectMenuTextOnSideBar(), "Select Menu");
+			Assert.assertEquals(widpg.verifySelectMenuTextOnSideBar(), prop.getProperty("smTxt"));
 			widpg.clickOnSelectMenuTab();
-			Assert.assertEquals(widpg.verifySelectMenuOnPage(), "Select Menu");
-			widpg.selectDataInSelectDrpDwn();
-			Assert.assertEquals(widpg.verifySelectedDataInSelectDrpDwn(), "A root option");
-			widpg.selectDataInSelectOneDrpDwn();
-			Assert.assertEquals(widpg.verifySelectdataInSelectOneDrpDwn(), "Prof.");
+			Assert.assertEquals(widpg.verifySelectMenuOnPage(), prop.getProperty("smTxt"));
+			widpg.selectDataInSelectDrpDwn(prop.getProperty("selectDpData"));
+			Assert.assertEquals(widpg.verifySelectedDataInSelectDrpDwn(), prop.getProperty("selectDpData"));
+			widpg.selectDataInSelectOneDrpDwn(prop.getProperty("selectData"));
+			Assert.assertEquals(widpg.verifySelectdataInSelectOneDrpDwn(), prop.getProperty("selectData"));
 			widpg.selectDataInColorDrpDwn();
-			widpg.selectMultipleDataInDrpDwn();
+			widpg.selectMultipleDataInDrpDwn(prop.getProperty("enterColor_1"), prop.getProperty("enterColor_2"), prop.getProperty("enterColor_3"));
 		}catch(Exception e)
 		{
 			System.out.println("Element not found within timeout: " + e.getMessage());

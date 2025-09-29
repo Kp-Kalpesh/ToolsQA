@@ -435,17 +435,17 @@ public class WidgetsPage extends TestBase{
 		return selectMenuOnPage.getText();
 	}
 
-	public void selectDataInSelectDrpDwn() throws InterruptedException {
+	public void selectDataInSelectDrpDwn(String selectValDrpDwn) throws InterruptedException {
 		Thread.sleep(1000);
-		act.sendKeys(selectValueDrpDwn, "A root option", Keys.ENTER).build().perform();
+		act.sendKeys(selectValueDrpDwn, selectValDrpDwn, Keys.ENTER).build().perform();
 	}
 
 	public String verifySelectedDataInSelectDrpDwn() {
 		return selectedValue.getText(); 
 	}
 
-	public void selectDataInSelectOneDrpDwn() {
-		act.sendKeys(selectOneDrpDwn, "Prof.", Keys.ENTER).build().perform();
+	public void selectDataInSelectOneDrpDwn(String selectOne) {
+		act.sendKeys(selectOneDrpDwn, selectOne, Keys.ENTER).build().perform();
 	}
 
 	public String verifySelectdataInSelectOneDrpDwn() {
@@ -457,12 +457,12 @@ public class WidgetsPage extends TestBase{
 		se.selectByValue("2");
 	}
 
-	public void selectMultipleDataInDrpDwn() throws InterruptedException {
+	public void selectMultipleDataInDrpDwn(String Color_1, String Color_2, String Color_3) throws InterruptedException {
 		act.sendKeys(multiselectDrpDwn, Keys.PAGE_DOWN).perform();
 		Thread.sleep(500);
-		act.sendKeys(multiselectDrpDwn, "Green", Keys.ENTER).build().perform();
-		act.sendKeys(multiselectDrpDwn, "Black", Keys.ENTER).build().perform();
-		act.sendKeys(multiselectDrpDwn, "Red", Keys.ENTER).build().perform();
+		act.sendKeys(multiselectDrpDwn, Color_1, Keys.ENTER).build().perform();
+		act.sendKeys(multiselectDrpDwn, Color_2, Keys.ENTER).build().perform();
+		act.sendKeys(multiselectDrpDwn, Color_3, Keys.ENTER).build().perform();
 	}
 	
 	public InteractionPage clickOnInteractionTab() {

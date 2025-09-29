@@ -151,7 +151,8 @@ public class InteractionPage extends TestBase{
 		clickOnGridText.click();
 	}
 
-	public String verifyFirstInGrid() {
+	public String verifyFirstInGrid() throws InterruptedException {
+		Thread.sleep(2000);
 		return verifyOneGrid.getText();
 	}
 

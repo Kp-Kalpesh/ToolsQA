@@ -205,9 +205,10 @@ public class ElementsPage extends TestBase{
 		permanentAddress.sendKeys(pAddress);
 	}
 
-	public void clickOnSubmitBtn() {
+	public void clickOnSubmitBtn() throws InterruptedException {
 		submitBtn.sendKeys(Keys.PAGE_DOWN);
 		submitBtn.click();
+		Thread.sleep(5000);
 	}
 
 	public String verifyFullName() {

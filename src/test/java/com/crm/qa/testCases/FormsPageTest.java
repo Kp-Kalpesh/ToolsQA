@@ -34,10 +34,10 @@ public class FormsPageTest extends TestBase{
 	public void verifyFormsText() {
 		try {
 			String actFormText = frmPg.verifyFormsText();
-			Assert.assertEquals(actFormText, "Forms");
+			Assert.assertEquals(actFormText, prop.getProperty("FText"));
 
 			String actPracticeFormtext = frmPg.verifyPracticeFormText();
-			Assert.assertEquals(actPracticeFormtext, "Practice Form");
+			Assert.assertEquals(actPracticeFormtext, prop.getProperty("PFText"));
 			frmPg.clickOnPracticeFormText();
 
 		}catch (Exception e) {
@@ -45,7 +45,7 @@ public class FormsPageTest extends TestBase{
 		}
 	}
 
-
+	//Forms
 	@Test(priority = 2)
 	public void verifySubmitForm() {
 		try {
@@ -58,7 +58,7 @@ public class FormsPageTest extends TestBase{
 			//						frmPg.selectDOB();
 			frmPg.enterSubject(prop.getProperty("forSubject"));
 			frmPg.selectHobbiesChkBx();
-			frmPg.selectPicture();
+			frmPg.selectPicture(prop.getProperty("SelectPicUrl"));
 			frmPg.enterCurrentAddress(prop.getProperty("formCurrentAddress"));
 			frmPg.selectState(prop.getProperty("userState"));
 			frmPg.selectCity(prop.getProperty("userCity"));

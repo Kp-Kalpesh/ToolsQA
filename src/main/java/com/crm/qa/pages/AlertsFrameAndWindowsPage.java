@@ -302,7 +302,7 @@ public class AlertsFrameAndWindowsPage extends TestBase{
 	public void closeLargeModal() {
 		closeBtnOnLargeModal.click();
 	}
-	
+
 	public WidgetsPage clickOnWidgetsTab() {
 		WidgetTab.click();
 		return new WidgetsPage();
