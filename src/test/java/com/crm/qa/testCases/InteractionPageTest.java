@@ -112,6 +112,17 @@ public class InteractionPageTest extends TestBase{
 	}
 
 
+	@Test(priority = 4)
+	public void verifyDropableTab() {
+		try {
+			Assert.assertEquals(interpg.verifyDropableTxtOnMenuBar(), "Droppable");
+			interpg.clickOnDroppableTxtOnMenuBar();
+			Assert.assertEquals(interpg.verifyDroppabletxtOnPage(), "Droppable");
+		}catch(Exception e) {
+
+		}
+	}
+
 
 	@AfterMethod
 	public void tearDown() {

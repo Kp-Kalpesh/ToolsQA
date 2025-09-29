@@ -99,6 +99,13 @@ public class InteractionPage extends TestBase{
 	@FindBy(xpath = "(//span[contains(@class,'react-resizabl')])[1]")
 	WebElement cursor_1;
 
+	//Doapable
+	@FindBy(xpath = "(//li[@id='item-3'])[4]")
+	WebElement dropableTxtOnMenuBar;
+	@FindBy(xpath = "//h1[text()='Droppable']")
+	WebElement dropableTxtOnPage;
+	
+	
 
 	//Constructor
 	public InteractionPage() {
@@ -309,5 +316,21 @@ public class InteractionPage extends TestBase{
 		Thread.sleep(1000);
 		act.release().perform();
 //		act.dragAndDropBy(cursor_1, 300, 200).release().build().perform();
+	}
+	
+	//Dropable
+	public String verifyDropableTxtOnMenuBar() throws InterruptedException {
+		Thread.sleep(2000);
+		return dropableTxtOnMenuBar.getText();
+	}
+	
+	public void clickOnDroppableTxtOnMenuBar() throws InterruptedException {
+		act.sendKeys(Keys.PAGE_DOWN).perform();
+		Thread.sleep(2000);
+		dropableTxtOnMenuBar.click();
+	}
+	
+	public String verifyDroppabletxtOnPage() {
+		return dropableTxtOnPage.getText();
 	}
 }
