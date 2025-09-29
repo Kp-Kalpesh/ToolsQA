@@ -1,12 +1,16 @@
 package com.crm.qa.pages;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.crm.qa.base.TestBase;
 
 public class InteractionPage extends TestBase{
+	
+	Actions act;
 
 	@FindBy(xpath = "//div[text()='Interactions']")
 	WebElement interactionTextOnMenuBar;
@@ -89,6 +93,7 @@ public class InteractionPage extends TestBase{
 	//Constructor
 	public InteractionPage() {
 		PageFactory.initElements(driver, this);
+		act = new Actions(driver);
 	}
 
 
@@ -96,7 +101,8 @@ public class InteractionPage extends TestBase{
 		return interactionTextOnMenuBar.getText();
 	}
 
-	public String verifySortableTxtOnMenuBar() {
+	public String verifySortableTxtOnMenuBar() throws InterruptedException {
+		Thread.sleep(1000);
 		return sortableTextOnMenuBar.getText();
 	}
 
@@ -112,7 +118,8 @@ public class InteractionPage extends TestBase{
 		return verifyListText.getText();
 	}
 
-	public String verifyOneInList() {
+	public String verifyOneInList() throws InterruptedException {
+		Thread.sleep(1000);
 		return verifyOneList.getText();
 	}
 
@@ -205,6 +212,8 @@ public class InteractionPage extends TestBase{
 	}
 
 	public String verifyAndClickOn4thTxtOnPage() throws InterruptedException {
+		Thread.sleep(1000);
+		act.sendKeys(clickOnTxt_4inList, Keys.PAGE_DOWN).perform();
 		Thread.sleep(1000);
 		clickOnTxt_4inList.click();
 		return clickOnTxt_4inList.getText();

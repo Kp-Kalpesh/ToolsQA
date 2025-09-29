@@ -1,21 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-26T11:46:48 IST" name="Default suite" finished-at="2025-09-26T11:47:05 IST" duration-ms="17390">
+  <suite started-at="2025-09-29T10:53:54 IST" name="Default suite" finished-at="2025-09-29T10:54:17 IST" duration-ms="23161">
     <groups>
     </groups>
-    <test started-at="2025-09-26T11:46:48 IST" name="Default test" finished-at="2025-09-26T11:47:05 IST" duration-ms="17390">
+    <test started-at="2025-09-29T10:53:54 IST" name="Default test" finished-at="2025-09-29T10:54:17 IST" duration-ms="23161">
       <class name="com.crm.qa.testCases.InteractionPageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.crm.qa.testCases.InteractionPageTest@27406a17]" started-at="2025-09-26T11:46:48 IST" name="setup" finished-at="2025-09-26T11:46:58 IST" duration-ms="10006" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.crm.qa.testCases.InteractionPageTest@25ce9dc4]" started-at="2025-09-29T10:53:54 IST" name="setup" finished-at="2025-09-29T10:54:02 IST" duration-ms="8157" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifySelectableTab()[pri:0, instance:com.crm.qa.testCases.InteractionPageTest@27406a17]" started-at="2025-09-26T11:46:58 IST" name="verifySelectableTab" finished-at="2025-09-26T11:47:05 IST" duration-ms="7360" status="PASS">
+        <test-method signature="verifyInteractionText()[pri:1, instance:com.crm.qa.testCases.InteractionPageTest@25ce9dc4]" started-at="2025-09-29T10:54:02 IST" name="verifyInteractionText" finished-at="2025-09-29T10:54:05 IST" duration-ms="2292" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyInteractionText -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.qa.testCases.InteractionPageTest@25ce9dc4]" started-at="2025-09-29T10:54:05 IST" name="tearDown" finished-at="2025-09-29T10:54:05 IST" duration-ms="115" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.crm.qa.testCases.InteractionPageTest@25ce9dc4]" started-at="2025-09-29T10:54:05 IST" name="setup" finished-at="2025-09-29T10:54:09 IST" duration-ms="4578" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifySelectableTab()[pri:2, instance:com.crm.qa.testCases.InteractionPageTest@25ce9dc4]" started-at="2025-09-29T10:54:09 IST" name="verifySelectableTab" finished-at="2025-09-29T10:54:17 IST" duration-ms="7873" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySelectableTab -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.qa.testCases.InteractionPageTest@27406a17]" started-at="2025-09-26T11:47:05 IST" name="tearDown" finished-at="2025-09-26T11:47:05 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.qa.testCases.InteractionPageTest@25ce9dc4]" started-at="2025-09-29T10:54:17 IST" name="tearDown" finished-at="2025-09-29T10:54:17 IST" duration-ms="117" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

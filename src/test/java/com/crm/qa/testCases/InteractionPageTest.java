@@ -68,7 +68,7 @@ public class InteractionPageTest extends TestBase{
 	}
 
 	//Selectable Tab
-	@Test
+	@Test(priority = 2)
 	public void verifySelectableTab() {
 		try {
 			Assert.assertEquals(interpg.verifySelectableTxtOnMenuBar(), "Selectable");
@@ -91,10 +91,6 @@ public class InteractionPageTest extends TestBase{
 			Assert.assertEquals(interpg.verifyAndClick7thBoxTxtOnPage(), "Seven");
 			Assert.assertEquals(interpg.verifyAndClick8thBoxTxtOnPage(), "Eight");
 			Assert.assertEquals(interpg.verifyAndClick9thBoxTxtOnPage(), "Nine");
-
-
-
-
 		}catch(Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}
@@ -105,6 +101,6 @@ public class InteractionPageTest extends TestBase{
 
 	@AfterMethod
 	public void tearDown() {
-//		driver.quit();
+		driver.quit();
 	}
 }
