@@ -303,7 +303,11 @@ public class InteractionPage extends TestBase{
 	
 	public void expandBoxSize() throws InterruptedException {
 		Thread.sleep(3000);
-		act.clickAndHold(cursor_1).moveByOffset(300, 250).release().build().perform();
+		act.clickAndHold(cursor_1).perform();
+		Thread.sleep(2000);
+		act.moveByOffset(500,300).perform();
+		Thread.sleep(1000);
+		act.release().perform();
 //		act.dragAndDropBy(cursor_1, 300, 200).release().build().perform();
 	}
 }
