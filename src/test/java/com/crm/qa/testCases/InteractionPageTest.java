@@ -134,6 +134,20 @@ public class InteractionPageTest extends TestBase{
 		}
 	}
 
+	
+	//Dragabble
+	@Test(priority = 5)
+	public void verifyDraggableTab() {
+		try {
+			Assert.assertEquals(interpg.verifyDragableTxtOnMenuBar(), "Dragabble");
+			interpg.clickOnDragabbleTxtOnMenuBar();
+			Assert.assertEquals(interpg.verifyDragTxtOnPage(), "Dragabble");
+			
+			
+		}catch(Exception e) {
+			System.out.println("Element not found within timeout: " + e.getMessage());
+		}
+	}
 
 	@AfterMethod
 	public void tearDown() {

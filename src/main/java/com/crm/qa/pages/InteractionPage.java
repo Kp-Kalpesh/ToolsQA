@@ -136,6 +136,12 @@ public class InteractionPage extends TestBase{
 	WebElement DropBxtxt1;
 
 
+	//Dragable
+	@FindBy(xpath = "(//li[@id='item-4'])[4]")
+	WebElement dragableTxtOnMenuBar;
+@FindBy(xpath = "//h1[text()='Dragabble']")
+WebElement dragabbleTxtOnpage;
+
 	//Constructor
 	public InteractionPage() {
 		PageFactory.initElements(driver, this);
@@ -422,4 +428,19 @@ public class InteractionPage extends TestBase{
 		}
 	}
 
+
+	//Dragabble
+	public String verifyDragableTxtOnMenuBar() throws InterruptedException {
+		act.sendKeys(dropableTxtOnMenuBar,Keys.PAGE_DOWN).perform();
+		return dragableTxtOnMenuBar.getText();
+	}
+
+	public void clickOnDragabbleTxtOnMenuBar() throws InterruptedException {
+		Thread.sleep(2000);
+		dragableTxtOnMenuBar.click();
+	}
+	
+	public String verifyDragTxtOnPage() {
+		return dragabbleTxtOnpage.getText();
+	}
 }
