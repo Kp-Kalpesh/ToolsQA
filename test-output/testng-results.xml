@@ -2,20 +2,20 @@
 <testng-results ignored="4" total="5" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-30T14:45:09 IST" name="Default suite" finished-at="2025-09-30T14:45:19 IST" duration-ms="10406">
+  <suite started-at="2025-09-30T19:06:08 IST" name="Default suite" finished-at="2025-09-30T19:06:15 IST" duration-ms="6558">
     <groups>
     </groups>
-    <test started-at="2025-09-30T14:45:09 IST" name="Default test" finished-at="2025-09-30T14:45:19 IST" duration-ms="10406">
+    <test started-at="2025-09-30T19:06:08 IST" name="Default test" finished-at="2025-09-30T19:06:15 IST" duration-ms="6558">
       <class name="com.crm.qa.testCases.InteractionPageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.crm.qa.testCases.InteractionPageTest@793f29ff]" started-at="2025-09-30T14:45:09 IST" name="setup" finished-at="2025-09-30T14:45:17 IST" duration-ms="8061" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.crm.qa.testCases.InteractionPageTest@793f29ff]" started-at="2025-09-30T19:06:08 IST" name="setup" finished-at="2025-09-30T19:06:13 IST" duration-ms="4246" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyDraggableTab()[pri:5, instance:com.crm.qa.testCases.InteractionPageTest@793f29ff]" started-at="2025-09-30T14:45:17 IST" name="verifyDraggableTab" finished-at="2025-09-30T14:45:19 IST" duration-ms="2322" status="PASS">
+        <test-method signature="verifyDraggableTab()[pri:5, instance:com.crm.qa.testCases.InteractionPageTest@793f29ff]" started-at="2025-09-30T19:06:13 IST" name="verifyDraggableTab" finished-at="2025-09-30T19:06:15 IST" duration-ms="2287" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyDraggableTab -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.qa.testCases.InteractionPageTest@793f29ff]" started-at="2025-09-30T14:45:19 IST" name="tearDown" finished-at="2025-09-30T14:45:19 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.qa.testCases.InteractionPageTest@793f29ff]" started-at="2025-09-30T19:06:15 IST" name="tearDown" finished-at="2025-09-30T19:06:15 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
