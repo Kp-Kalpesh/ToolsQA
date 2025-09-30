@@ -40,6 +40,7 @@ public class InteractionPageTest extends TestBase{
 		interpg = widpg.clickOnInteractionTab();
 	}
 
+	//Sortable
 	@Test(priority = 1)
 	public void verifyInteractionText() {
 		try {
@@ -96,40 +97,46 @@ public class InteractionPageTest extends TestBase{
 		}
 	}
 
-	//Pending
-
+	//Resizable
 	@Test(priority = 3)
 	public void verifyResizableTab() throws InterruptedException {
 		try {
-			Assert.assertEquals(interpg.verifyResizableTxtOnMenu(), "Resizable");
+			Assert.assertEquals(interpg.verifyResizableTxtOnMenu(), prop.getProperty("reszTxt"));
 			interpg.clickOnResizableTxtOnMenuBar();
-			Assert.assertEquals(interpg.verifyResizableTxtOnPage(), "Resizable");
-			Assert.assertEquals(interpg.verifyMessageOfRisizableBox(), "Resizable box, starting at 200x200. Min size is 150x150, max is 500x300.");
+			Assert.assertEquals(interpg.verifyResizableTxtOnPage(), prop.getProperty("reszTxt"));
+			Assert.assertEquals(interpg.verifyMessageOfRisizableBox(), prop.getProperty("reszBxMessage"));
 			interpg.expandBoxSize();
 		}catch(Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}
 	}
 
-
+	//Droppable
 	@Test(priority = 4)
-	public void verifyDropableTab() {
+	public void verifyDropableTab() throws InterruptedException {
 		try {
-			Assert.assertEquals(interpg.verifyDropableTxtOnMenuBar(), "Droppable");
+			Assert.assertEquals(interpg.verifyDropableTxtOnMenuBar(), prop.getProperty("drpTxt"));
 			interpg.clickOnDroppableTxtOnMenuBar();
-			Assert.assertEquals(interpg.verifyDroppabletxtOnPage(), "Droppable");
-			Assert.assertEquals(interpg.verifySimpleTxtOnPage(), "Simple");
+			Assert.assertEquals(interpg.verifyDroppabletxtOnPage(), prop.getProperty("drpTxt"));
+			Assert.assertEquals(interpg.verifySimpleTxtOnPage(), prop.getProperty("simpleTxt"));
 			interpg.verifyDragAndDrop();
-			
-			
+			Assert.assertEquals(interpg.verifyAcceptTxtOnPage(), prop.getProperty("accTxt"));
+			interpg.clickOnAcceptTxt();
+			interpg.verifyAcceptDragDrop();
+			Assert.assertEquals(interpg.verifyPreventPropogationTxt(), prop.getProperty("ppTxt"));
+			interpg.clickOnPreventPropogationTxt();
+			interpg.dragBoxOfPreventPorpogation();
+			Assert.assertEquals(interpg.verifyRevertDraggableText(), prop.getProperty("rdTxt"));
+			interpg.clickOnRevertDraggableTxt();
+			interpg.dragWillRevertIntoBx();
 		}catch(Exception e) {
-
+			System.out.println("Element not found within timeout: " + e.getMessage());
 		}
 	}
 
 
 	@AfterMethod
 	public void tearDown() {
-		//		driver.quit();
+		//				driver.quit();
 	}
 }

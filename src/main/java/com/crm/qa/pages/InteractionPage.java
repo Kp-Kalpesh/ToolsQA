@@ -110,19 +110,31 @@ public class InteractionPage extends TestBase{
 	WebElement dragMeBx;
 	@FindBy(xpath = "(//div[@id='droppable'])[1]")
 	WebElement dropherebx;
-//	@FindBy(xpath = "")
-//	WebElement simpleTxtOnPage;
-//	@FindBy(xpath = "")
-//	WebElement simpleTxtOnPage;
-//	@FindBy(xpath = "")
-//	WebElement simpleTxtOnPage;
-//	@FindBy(xpath = "")
-//	WebElement simpleTxtOnPage;
-//	@FindBy(xpath = "")
-//	WebElement simpleTxtOnPage;
-	
-	
-	
+	@FindBy(xpath = "//a[text()='Accept']")
+	WebElement acceptTxtOnPage;
+	@FindBy(xpath = "//div[text()='Acceptable']")
+	WebElement acceptableDragBx;
+	@FindBy(xpath = "(//div[@id='droppable'])[2]")
+	WebElement acceptableDropBx;
+	@FindBy(xpath = "//a[text()='Prevent Propogation']")
+	WebElement preventPorpTxtOnPage;
+	@FindBy(xpath = "//div[text()='Drag Me']")
+	WebElement dragMeBx_2;
+	@FindBy(xpath = "//div[@id='notGreedyInnerDropBox']")
+	WebElement dropMeBx_2;
+	@FindBy(xpath = "//a[text()='Revert Draggable']")
+	WebElement revertDraggableTxtOnPage;
+	@FindBy(xpath = "//div[text()='Will Revert']")
+	WebElement willRevert;
+	@FindBy(xpath = "(//div[@id='droppable'])[3]")
+	WebElement dropedBx;
+	@FindBy(xpath = "//div[text()='Not Revert']")
+	WebElement notRevert;
+	@FindBy(xpath = "//p[text()='Drop here']")
+	WebElement DropBxtxt;
+	@FindBy(xpath = "//p[text()='Dropped!']")
+	WebElement DropBxtxt1;
+
 
 	//Constructor
 	public InteractionPage() {
@@ -306,25 +318,25 @@ public class InteractionPage extends TestBase{
 		clickOnNineTxtInGrid.click();
 		return clickOnNineTxtInGrid.getText();
 	}
-	
+
 	//Resizable
 	public String verifyResizableTxtOnMenu() throws InterruptedException {
 		Thread.sleep(2000);
 		return resizableTxtOnMenuBar.getText();
 	}
-	
+
 	public void clickOnResizableTxtOnMenuBar() {
 		resizableTxtOnMenuBar.click();
 	}
-	
+
 	public String verifyResizableTxtOnPage() {
 		return resizableTxtOnPage.getText();
 	}
-	
+
 	public String verifyMessageOfRisizableBox() {
 		return boxSizeRatio.getText();
 	}
-	
+
 	public void expandBoxSize() throws InterruptedException {
 		Thread.sleep(3000);
 		act.clickAndHold(cursor_1).perform();
@@ -332,31 +344,82 @@ public class InteractionPage extends TestBase{
 		act.moveByOffset(500,300).perform();
 		Thread.sleep(1000);
 		act.release().perform();
-//		act.dragAndDropBy(cursor_1, 300, 200).release().build().perform();
+		//		act.dragAndDropBy(cursor_1, 300, 200).release().build().perform();
 	}
-	
+
 	//Dropable
 	public String verifyDropableTxtOnMenuBar() throws InterruptedException {
 		Thread.sleep(2000);
 		return dropableTxtOnMenuBar.getText();
 	}
-	
+
 	public void clickOnDroppableTxtOnMenuBar() throws InterruptedException {
 		act.sendKeys(Keys.PAGE_DOWN).perform();
 		Thread.sleep(2000);
 		dropableTxtOnMenuBar.click();
 	}
-	
+
 	public String verifyDroppabletxtOnPage() {
 		return dropableTxtOnPage.getText();
 	}
-	
+
 	public String verifySimpleTxtOnPage() {
 		return simpleTxtOnPage.getText();
 	}
-	
+
 	public void verifyDragAndDrop() throws InterruptedException {
 		Thread.sleep(2000);
 		act.dragAndDrop(dragMeBx,dropherebx).perform();
 	}
+
+	public String verifyAcceptTxtOnPage() {
+		return acceptTxtOnPage.getText();
+	}
+
+	public void clickOnAcceptTxt() {
+		acceptTxtOnPage.click();
+	}
+
+	public void verifyAcceptDragDrop() throws InterruptedException {
+		Thread.sleep(2000);
+		act.dragAndDrop(acceptableDragBx, acceptableDropBx).perform();
+	}
+
+	public String verifyPreventPropogationTxt() {
+		return preventPorpTxtOnPage.getText(); 
+	}
+
+	public void clickOnPreventPropogationTxt() {
+		preventPorpTxtOnPage.click();
+	}
+
+	public void dragBoxOfPreventPorpogation() throws InterruptedException {
+		Thread.sleep(2000);
+		act.dragAndDrop(dragMeBx_2, dropMeBx_2).perform();
+	}
+
+	public String verifyRevertDraggableText() {
+		return revertDraggableTxtOnPage.getText();
+	}
+
+	public void clickOnRevertDraggableTxt() {
+		revertDraggableTxtOnPage.click();
+	}
+
+	public void dragWillRevertIntoBx() throws InterruptedException {
+		Thread.sleep(2000);
+		String actDropBxTxt = DropBxtxt.getText();
+		act.dragAndDrop(willRevert, dropedBx).perform();
+		Thread.sleep(2000);
+		String expDropBxTxt = DropBxtxt1.getText();
+
+		if(!expDropBxTxt.equals(actDropBxTxt))
+		{
+			Thread.sleep(1000);
+			act.dragAndDrop(notRevert, dropedBx).perform();
+		}else {
+			System.out.println("The drag and drop operation is not working");
+		}
+	}
+
 }
