@@ -136,11 +136,40 @@ public class InteractionPage extends TestBase{
 	WebElement DropBxtxt1;
 
 
-	//Dragable
+	//Dragabble
 	@FindBy(xpath = "(//li[@id='item-4'])[4]")
 	WebElement dragableTxtOnMenuBar;
-@FindBy(xpath = "//h1[text()='Dragabble']")
-WebElement dragabbleTxtOnpage;
+	@FindBy(xpath = "//h1[text()='Dragabble']")
+	WebElement dragabbleTxtOnpage;
+	@FindBy(xpath = "//a[text()='Simple']")
+	WebElement simpleTxtOnpage;
+	@FindBy(xpath = "//div[text()='Drag me']")
+	WebElement dragMeBxDragabble;
+	@FindBy(xpath = "//a[text()='Axis Restricted']")
+	WebElement axisRestrict;
+	@FindBy(xpath = "//div[text()='Only X']")
+	WebElement onlyXaxis;
+	@FindBy(xpath = "//div[text()='Only Y']")
+	WebElement onlyYaxis;
+	@FindBy(xpath = "//a[text()='Container Restricted']")
+	WebElement containerRestricted;
+	@FindBy(xpath = "//div[contains(text(),'contained within the box')]")
+	WebElement containInnerBox;
+	@FindBy(xpath = "//span[contains(text(),'contained within my parent')]")
+	WebElement containOuterBox;
+	@FindBy(xpath = "//a[text()='Cursor Style']")
+	WebElement cursorStyleTxtOnpage;
+	@FindBy(xpath = "//div[text()='I will always stick to the center']")
+	WebElement cursor_1Draggable;
+	@FindBy(xpath = "//div[text()='My cursor is at top left']")
+	WebElement cursor_2Draggable;
+	@FindBy(xpath = "//span[text()='My cursor is at bottom']")
+	WebElement cursor_3Draggable;
+
+
+
+
+
 
 	//Constructor
 	public InteractionPage() {
@@ -439,8 +468,98 @@ WebElement dragabbleTxtOnpage;
 		Thread.sleep(2000);
 		dragableTxtOnMenuBar.click();
 	}
-	
+
 	public String verifyDragTxtOnPage() {
 		return dragabbleTxtOnpage.getText();
+	}
+
+	public String verifySimpleTextOnPage() {
+		return simpleTxtOnpage.getText();
+	}
+
+	public void performDragableAction() throws InterruptedException {
+		Thread.sleep(2000);
+		act.clickAndHold(dragMeBxDragabble).moveByOffset(200,50).release().build().perform();
+	}
+
+	public String verifyAxisRestrictTxtOnPage() {
+		return axisRestrict.getText();
+	}
+
+	public void clickOnAxisRestricted() {
+		axisRestrict.click();
+	}
+
+	public void performedXAxis() throws InterruptedException {
+		act.sendKeys(Keys.PAGE_DOWN).perform();
+		Thread.sleep(2000);
+		act.clickAndHold(onlyXaxis).moveByOffset(200,0).release().build().perform();
+		//		act.dragAndDropBy(onlyXaxis,200,0).build().perform();
+	}
+
+	public void performedYAxis() throws InterruptedException {
+		Thread.sleep(2000);
+		act.clickAndHold(onlyYaxis).moveByOffset(0,300).release().build().perform();
+	}
+
+	public String verifyContainerRestrictedTxtOnPage() {
+		return containerRestricted.getText();
+	}
+
+	public void clickOnContainerrestricted() {
+		containerRestricted.click();
+	}
+
+	public String verifyInnerBoxTextIsPresent() throws InterruptedException {
+		Thread.sleep(1000);
+		return containInnerBox.getText();
+	}
+
+	public void dragInnerBx() throws InterruptedException {
+		Thread.sleep(2000);
+		act.dragAndDropBy(containInnerBox,150,50).build().perform();
+	}
+
+	public String verifyTxtOnOuterBox() {
+		return containOuterBox.getText();
+	}
+
+	public String verifyCursorStyleTxtOnPage() {
+		return cursorStyleTxtOnpage.getText();
+	}
+
+	public void clickOnCursorStyleTxt() {
+		cursorStyleTxtOnpage.click();
+	}
+
+	public String verifyCuror_1Text() throws InterruptedException {
+		Thread.sleep(1000);
+		return cursor_1Draggable.getText();
+	}
+
+	public void dragCursor_1() throws InterruptedException {
+		Thread.sleep(1000);
+		act.dragAndDropBy(cursor_1Draggable,500,200).build().perform();
+	}
+
+	public String verifyCuror_2Text() throws InterruptedException {
+		Thread.sleep(1000);
+		return cursor_2Draggable.getText();
+	}
+
+	public void dragCursor_2() throws InterruptedException {
+		Thread.sleep(1000);
+		act.dragAndDropBy(cursor_2Draggable,200,50).build().perform();
+	}
+
+	public String verifyCuror_3Text() throws InterruptedException {
+		Thread.sleep(1000);
+		return cursor_3Draggable.getText(); 
+	}
+
+	public void dragCursor_3() throws InterruptedException {
+		Thread.sleep(2000);
+		act.clickAndHold(cursor_3Draggable).moveByOffset(100,300).release().build().perform();
+		act.dragAndDropBy(cursor_3Draggable,100,350).build().perform();
 	}
 }

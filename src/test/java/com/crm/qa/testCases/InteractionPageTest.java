@@ -23,11 +23,9 @@ public class InteractionPageTest extends TestBase{
 	InteractionPage interpg;
 
 
-
 	public InteractionPageTest() {
 		super();
 	}
-
 
 	@BeforeMethod
 	public void setup() {
@@ -134,16 +132,33 @@ public class InteractionPageTest extends TestBase{
 		}
 	}
 
-	
+
 	//Dragabble
 	@Test(priority = 5)
 	public void verifyDraggableTab() {
 		try {
-			Assert.assertEquals(interpg.verifyDragableTxtOnMenuBar(), "Dragabble");
+			Assert.assertEquals(interpg.verifyDragableTxtOnMenuBar(), prop.getProperty("dragTxt"));
 			interpg.clickOnDragabbleTxtOnMenuBar();
-			Assert.assertEquals(interpg.verifyDragTxtOnPage(), "Dragabble");
-			
-			
+			Assert.assertEquals(interpg.verifyDragTxtOnPage(), prop.getProperty("dragTxt"));
+			Assert.assertEquals(interpg.verifySimpleTextOnPage(), prop.getProperty("spTxt"));
+			interpg.performDragableAction();
+			Assert.assertEquals(interpg.verifyAxisRestrictTxtOnPage(), prop.getProperty("ARTxt"));
+			interpg.clickOnAxisRestricted();
+			interpg.performedXAxis();
+			interpg.performedYAxis();
+			Assert.assertEquals(interpg.verifyContainerRestrictedTxtOnPage(), prop.getProperty("CRTxt"));
+			interpg.clickOnContainerrestricted();
+			Assert.assertEquals(interpg.verifyInnerBoxTextIsPresent(), prop.getProperty("innerBxTxt"));
+			interpg.dragInnerBx();
+			Assert.assertEquals(interpg.verifyTxtOnOuterBox(), prop.getProperty("outerBxTxt"));
+			Assert.assertEquals(interpg.verifyCursorStyleTxtOnPage(), prop.getProperty("CSTxt"));
+			interpg.clickOnCursorStyleTxt();
+			Assert.assertEquals(interpg.verifyCuror_1Text(), prop.getProperty("CS_1Txt"));
+			interpg.dragCursor_1();
+			Assert.assertEquals(interpg.verifyCuror_2Text(), prop.getProperty("CS_2Txt"));
+			interpg.dragCursor_2();
+			Assert.assertEquals(interpg.verifyCuror_3Text(), prop.getProperty("CS_3Txt"));
+			interpg.dragCursor_3();
 		}catch(Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}
@@ -151,6 +166,6 @@ public class InteractionPageTest extends TestBase{
 
 	@AfterMethod
 	public void tearDown() {
-		//				driver.quit();
+		driver.quit();
 	}
 }

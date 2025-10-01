@@ -8,6 +8,9 @@
           <include name="setup"/>
           <include name="tearDown"/>
           <include name="verifyDraggableTab"/>
+          <include name="verifyDropableTab"/>
+          <include name="verifyResizableTab"/>
+          <include name="verifySelectableTab"/>
         </methods>
       </class> <!-- com.crm.qa.testCases.InteractionPageTest -->
     </classes>
