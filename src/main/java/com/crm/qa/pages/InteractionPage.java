@@ -135,7 +135,6 @@ public class InteractionPage extends TestBase{
 	@FindBy(xpath = "//p[text()='Dropped!']")
 	WebElement DropBxtxt1;
 
-
 	//Dragabble
 	@FindBy(xpath = "(//li[@id='item-4'])[4]")
 	WebElement dragableTxtOnMenuBar;
@@ -166,9 +165,9 @@ public class InteractionPage extends TestBase{
 	@FindBy(xpath = "//span[text()='My cursor is at bottom']")
 	WebElement cursor_3Draggable;
 
-
-
-
+	//Book Store
+	@FindBy(xpath = "//div[text()='Book Store Application']")
+	WebElement bookStoreApplication;
 
 
 	//Constructor
@@ -561,5 +560,10 @@ public class InteractionPage extends TestBase{
 		Thread.sleep(2000);
 		act.clickAndHold(cursor_3Draggable).moveByOffset(100,300).release().build().perform();
 		act.dragAndDropBy(cursor_3Draggable,100,350).build().perform();
+	}
+
+	public BookStoreApplicationPage clickOnBookStoreApp() {
+		bookStoreApplication.click();
+		return new BookStoreApplicationPage();
 	}
 }
