@@ -43,7 +43,7 @@ public class BookStoreApplicationPageTest extends TestBase{
 
 	}
 
-	
+
 	//The code is Register user but it will get the captcha and we 
 	//can't able to automate the captcha so u need to write a whole script for login user
 	@Test(priority = 1)
@@ -53,21 +53,15 @@ public class BookStoreApplicationPageTest extends TestBase{
 			Assert.assertEquals(bookstrapg.veridyProfileTxtOnMenuBar(), "Profile");
 			bookstrapg.clickOnProfileTxtOnMenuBar();
 			Assert.assertEquals(bookstrapg.verifyLoginPageMessage(), "Currently you are not logged into the Book Store application, please visit the login page to enter or register page to register yourself.");
-			Assert.assertEquals(bookstrapg.verifyRegisterTxtOnLoginPage(), "register");
-			bookstrapg.clickOnRegisterTxt();
-			Assert.assertEquals(bookstrapg.verifyRegisterTxtOnPage(), "Register");
-			Assert.assertEquals(bookstrapg.verifyRegisterToBookStoreTxt(), "Register to Book Store");
-			Assert.assertTrue(bookstrapg.displayedFNameInputField(), "The first name field is not displayed");
-			bookstrapg.enterFName();
-			Assert.assertTrue(bookstrapg.displayedLNameInputField(), "The Last name field is not displayed");
-			bookstrapg.enterLname();
+			Assert.assertEquals(bookstrapg.verifyRegisterTxtOnLoginPage(), "login");
+			bookstrapg.clickOnLoginTxt();
+			Assert.assertEquals(bookstrapg.verifyLoginTxtOnPage(), "Login");
+			Assert.assertEquals(bookstrapg.verifyLoginToBookStoreTxt(), "Login in Book Store");
 			Assert.assertTrue(bookstrapg.displayedUNameField(), "The User name field is not displayed");
 			bookstrapg.enterUName();
 			Assert.assertTrue(bookstrapg.displayedPasswordField(), "The Password field is not displayed");
 			bookstrapg.enterPassword();
-			bookstrapg.checkOnChkBx();
-			bookstrapg.clickOnRegisterBtn();
-			bookstrapg.clickOnBacktoLoginBtn();
+			bookstrapg.clickOnLoginBtn();
 
 
 
@@ -78,7 +72,7 @@ public class BookStoreApplicationPageTest extends TestBase{
 
 	@AfterMethod
 	public void tearDown() {
-		//		driver.quit();
+		driver.quit();
 	}
 
 

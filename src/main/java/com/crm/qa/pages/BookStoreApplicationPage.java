@@ -19,26 +19,19 @@ public class BookStoreApplicationPage extends TestBase{
 	WebElement profile;
 	@FindBy(xpath = "//label[@id='notLoggin-label']")
 	WebElement profileMessage;
-	@FindBy(xpath = "//a[text()='register']")
-	WebElement registerTxtOnLoginPage;
-	@FindBy(xpath = "//h1[text()='Register']")
-	WebElement registerTxtOnPage;
-	@FindBy(xpath = "//h4[text()='Register to Book Store']")
-	WebElement registerToBookStore;
-	@FindBy(xpath = "//input[@placeholder='First Name']")
-	WebElement firstNameField;
-	@FindBy(xpath = "//input[@placeholder='Last Name']")
-	WebElement lastNameField;
+	@FindBy(xpath = "//a[text()='login']")
+	WebElement LoginTxtOnLoginPage;
+	@FindBy(xpath = "//h1[text()='Login']")
+	WebElement LoginTxtOnPage;
+	@FindBy(xpath = "//h5[text()='Login in Book Store']")
+	WebElement loginToBookStore;
 	@FindBy(xpath = "//input[@placeholder='UserName']")
 	WebElement userNameField;
 	@FindBy(xpath = "//input[@placeholder='Password']")
 	WebElement passwordField;
-	@FindBy(xpath = "(//div[@role='presentation'])[2]")
-	WebElement captchaCheckBx;
-	@FindBy(xpath = "//button[text()='Register']")
-	WebElement registerBtn;
-	@FindBy(xpath = "//button[text()='Back to Login']")
-	WebElement backtoLoginBtn;
+	@FindBy(xpath = "//button[text()='Login']")
+	WebElement loginBtn;
+	
 	//	@FindBy(xpath = "")
 	//	WebElement profileMessage;
 	//	@FindBy(xpath = "")
@@ -99,36 +92,24 @@ public class BookStoreApplicationPage extends TestBase{
 	}
 
 	public String verifyRegisterTxtOnLoginPage() {
-		return registerTxtOnLoginPage.getText();
+		return LoginTxtOnLoginPage.getText();
 	}
 
-	public void clickOnRegisterTxt() {
-		registerTxtOnLoginPage.click();
+	public void clickOnLoginTxt() {
+		LoginTxtOnLoginPage.click();
 	}
 
-	public String verifyRegisterTxtOnPage() {
-		return registerTxtOnPage.getText();
+	public String verifyLoginTxtOnPage() {
+		return LoginTxtOnPage.getText();
 	}
 
-	public String verifyRegisterToBookStoreTxt() {
-		return registerToBookStore.getText();
+	public String verifyLoginToBookStoreTxt() {
+		return loginToBookStore.getText();
 	}
 
-	public boolean displayedFNameInputField() {
-		return firstNameField.isDisplayed();
-	}
 
-	public void enterFName() {
-		firstNameField.sendKeys("Kalpesh");
-	}
 
-	public boolean displayedLNameInputField() {
-		return lastNameField.isDisplayed();
-	}
 
-	public void enterLname() {
-		lastNameField.sendKeys("Patil");
-	}
 
 	public boolean displayedUNameField() {
 		return userNameField.isDisplayed();
@@ -146,19 +127,10 @@ public class BookStoreApplicationPage extends TestBase{
 		passwordField.sendKeys("Kalpesh@123");
 	}
 
-	public void checkOnChkBx() {
-		captchaCheckBx.click();
+	public void clickOnLoginBtn() {
+		loginBtn.click();
 	}
 
-	public void clickOnRegisterBtn() {
-		registerBtn.click();
-		alt = driver.switchTo().alert();
-		alt.accept();
-	}
-
-	public void clickOnBacktoLoginBtn() {
-		backtoLoginBtn.click();
-	}
 
 
 
