@@ -31,23 +31,23 @@ public class BookStoreApplicationPage extends TestBase{
 	WebElement passwordField;
 	@FindBy(xpath = "//button[text()='Login']")
 	WebElement loginBtn;
-	
-	//	@FindBy(xpath = "")
-	//	WebElement profileMessage;
-	//	@FindBy(xpath = "")
-	//	WebElement profileMessage;
-	//	@FindBy(xpath = "")
-	//	WebElement profileMessage;
-	//	@FindBy(xpath = "")
-	//	WebElement profileMessage;
-	//	@FindBy(xpath = "")
-	//	WebElement profileMessage;
-	//	@FindBy(xpath = "")
-	//	WebElement profileMessage;
-	//	@FindBy(xpath = "")
-	//	WebElement profileMessage;
-	//	@FindBy(xpath = "")
-	//	WebElement profileMessage;
+
+	@FindBy(xpath = "//button[text()='Go To Book Store']")
+	WebElement goToStore;
+	@FindBy(xpath = "//label[text()='User Name : ']")
+	WebElement userName;
+	@FindBy(xpath = "//label[@id='userName-value']")
+	WebElement actUserName;
+	@FindBy(xpath = "//input[@placeholder='Type to search']")
+	WebElement searchField;
+	@FindBy(xpath = "//span[@id='see-book-Git Pocket Guide']//a")
+	WebElement bookName;
+	@FindBy(xpath = "(//div[@role='gridcell'])[3]")
+	WebElement authorName;
+	@FindBy(xpath = "(//div[@role='gridcell'])[4]")
+	WebElement publisherName;
+	@FindBy(xpath = "//button[text()='Log out']")
+	WebElement logoutBtn;
 	//	@FindBy(xpath = "")
 	//	WebElement profileMessage;
 	//	@FindBy(xpath = "")
@@ -72,7 +72,7 @@ public class BookStoreApplicationPage extends TestBase{
 	//Actions
 	public String verifyTabTextOnMenuBar() {
 		return bookStoreApplication.getText();
-		
+
 	}
 
 	public String veridyProfileTxtOnMenuBar() throws InterruptedException {
@@ -84,14 +84,14 @@ public class BookStoreApplicationPage extends TestBase{
 		act.sendKeys(Keys.PAGE_DOWN).perform();
 		Thread.sleep(2000);
 		act.click(profile).perform();
-//		profile.click
+		//		profile.click
 	}
 
 	public String verifyLoginPageMessage() {
 		return profileMessage.getText();
 	}
 
-	public String verifyRegisterTxtOnLoginPage() {
+	public String verifyLoginTxtOnLoginPage() {
 		return LoginTxtOnLoginPage.getText();
 	}
 
@@ -106,10 +106,6 @@ public class BookStoreApplicationPage extends TestBase{
 	public String verifyLoginToBookStoreTxt() {
 		return loginToBookStore.getText();
 	}
-
-
-
-
 
 	public boolean displayedUNameField() {
 		return userNameField.isDisplayed();
@@ -131,9 +127,36 @@ public class BookStoreApplicationPage extends TestBase{
 		loginBtn.click();
 	}
 
+	public void clickOnGoToStoreBtn() {
+		act.sendKeys(Keys.PAGE_DOWN).perform();
+		goToStore.click();
+	}
 
+	public String verifyUsername() {
+		return userName.getText();
+	}
 
+	public String verifyActualUserName() {
+		return actUserName.getText();
+	}
 
+	public void enterDataInSearchField() {
+		searchField.sendKeys("Git Pocket Guide");
+	}
 
+	public String verifyBookName() {
+		return bookName.getText();
+	}
 
+	public String verifyAuthorName() {
+		return authorName.getText();
+	}
+
+	public String verifyPublisherName() {
+		return publisherName.getText();
+	}
+
+	public void clickOnLogoutBtn() {
+		logoutBtn.click();
+	}
 }

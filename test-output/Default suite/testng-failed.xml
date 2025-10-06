@@ -5,8 +5,8 @@
     <classes>
       <class name="com.crm.qa.testCases.BookStoreApplicationPageTest">
         <methods>
-          <include name="verifyBookStoreApplication"/>
           <include name="setup"/>
+          <include name="verifyLoginuserData"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.crm.qa.testCases.BookStoreApplicationPageTest -->

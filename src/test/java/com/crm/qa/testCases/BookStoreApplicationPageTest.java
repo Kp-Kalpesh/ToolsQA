@@ -62,6 +62,30 @@ public class BookStoreApplicationPageTest extends TestBase{
 			Assert.assertTrue(bookstrapg.displayedPasswordField(), "The Password field is not displayed");
 			bookstrapg.enterPassword();
 			bookstrapg.clickOnLoginBtn();
+		}catch (Exception e) {
+			System.out.println("Element not found within timeout: " + e.getMessage());
+		}
+	}
+
+	@Test(priority = 2)
+	public void verifyLoginuserData() {
+		try {
+
+			bookstrapg.clickOnProfileTxtOnMenuBar();
+			bookstrapg.clickOnProfileTxtOnMenuBar();
+			bookstrapg.clickOnLoginTxt();
+			bookstrapg.enterUName();
+			bookstrapg.enterPassword();
+			bookstrapg.clickOnLoginBtn();
+			bookstrapg.clickOnGoToStoreBtn();
+			Assert.assertEquals(bookstrapg.verifyUsername(), "User Name : ");
+			Assert.assertEquals(bookstrapg.verifyActualUserName(), "Kalpesh.p");
+			bookstrapg.enterDataInSearchField();
+			Assert.assertEquals(bookstrapg.verifyBookName(), "Git Pocket Guide");
+			Assert.assertEquals(bookstrapg.verifyAuthorName(), "Richard E. Silverman");
+			Assert.assertEquals(bookstrapg.verifyPublisherName(), "O'Reilly Media");
+			bookstrapg.clickOnLogoutBtn();
+
 
 
 
@@ -72,7 +96,7 @@ public class BookStoreApplicationPageTest extends TestBase{
 
 	@AfterMethod
 	public void tearDown() {
-		driver.quit();
+		//		driver.quit();
 	}
 
 
