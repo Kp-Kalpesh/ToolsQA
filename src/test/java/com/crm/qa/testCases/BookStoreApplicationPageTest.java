@@ -43,6 +43,9 @@ public class BookStoreApplicationPageTest extends TestBase{
 
 	}
 
+	
+	//The code is Register user but it will get the captcha and we 
+	//can't able to automate the captcha so u need to write a whole script for login user
 	@Test(priority = 1)
 	public void verifyBookStoreApplication() {
 		try {
