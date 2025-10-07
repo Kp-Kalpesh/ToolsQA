@@ -53,7 +53,7 @@ public class BookStoreApplicationPageTest extends TestBase{
 			Assert.assertEquals(bookstrapg.veridyProfileTxtOnMenuBar(), "Profile");
 			bookstrapg.clickOnProfileTxtOnMenuBar();
 			Assert.assertEquals(bookstrapg.verifyLoginPageMessage(), "Currently you are not logged into the Book Store application, please visit the login page to enter or register page to register yourself.");
-			Assert.assertEquals(bookstrapg.verifyRegisterTxtOnLoginPage(), "login");
+			Assert.assertEquals(bookstrapg.verifyLoginTxtOnLoginPage(), "login");
 			bookstrapg.clickOnLoginTxt();
 			Assert.assertEquals(bookstrapg.verifyLoginTxtOnPage(), "Login");
 			Assert.assertEquals(bookstrapg.verifyLoginToBookStoreTxt(), "Login in Book Store");
@@ -70,7 +70,6 @@ public class BookStoreApplicationPageTest extends TestBase{
 	@Test(priority = 2)
 	public void verifyLoginuserData() {
 		try {
-
 			bookstrapg.clickOnProfileTxtOnMenuBar();
 			bookstrapg.clickOnProfileTxtOnMenuBar();
 			bookstrapg.clickOnLoginTxt();
@@ -85,9 +84,6 @@ public class BookStoreApplicationPageTest extends TestBase{
 			Assert.assertEquals(bookstrapg.verifyAuthorName(), "Richard E. Silverman");
 			Assert.assertEquals(bookstrapg.verifyPublisherName(), "O'Reilly Media");
 			bookstrapg.clickOnLogoutBtn();
-
-
-
 
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
